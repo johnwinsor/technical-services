@@ -28,6 +28,11 @@
 ```
 technical-services/
 ├── .venv
+├── uv.lock
+├── .gitignore
+├── .python-version
+├── pyproject.toml
+├── README.md
 ├── orders/
     └── amex/
         └── vendor-name_YYYYMMDD
@@ -35,14 +40,15 @@ technical-services/
         └── vendor-name_YYYYMMDD
 ├── invoices/
     └── YYYYMMDD_Invoices-To-Key/
-    ├── done/
+    ├── keyed/
+    ├── EDI/
+        └── loaded
 ├── JLG/
-    └── YYYYMMDD/
-├── pyproject.toml
-├── uv.lock
-├── README.md
+    └── Delivery-NO_#######/
 ├── src/
-│   └── library_acquisitions/   # Snake_case for Python package
+│   └── collection_management/
+│       ├── .env
+│   └── library_acquisitions/
 │       ├── __init__.py
 │       ├── .env
 │       ├── templates/
@@ -52,7 +58,7 @@ technical-services/
 │       ├── oclc_helpers.py
 │       ├── alma_create_po_line.py
 │       ├── amazon_pol_creator.py
-└── docs/
+├── withdrawals/
 └── weeding/
 ```
 

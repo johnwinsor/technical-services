@@ -1,0 +1,160 @@
+{
+  "number": "POL-151653",
+  "status": {
+    "value": ""
+  },
+  "owner": {
+    "value": "OLIN",
+    "desc": "F.W. Olin Library"
+  },
+  "type": {
+    "value": "PRINTED_BOOK_OT",
+    "desc": "Print Book - One Time"
+  },
+  "vendor": {
+    "value": "jlg-m",
+    "desc": "Junior Library Guild"
+  },
+  "rush": false,
+  "price": {
+    "sum": "0.0",
+    "currency": {
+      "value": "USD",
+      "desc": "US Dollar"
+    }
+  },
+  "portfolios": {
+    "portfolio": [],
+    "total_record_count": 0
+  },
+  "license": {
+    "value": "",
+    "desc": ""
+  },
+  "url": "",
+  "vendor_account": "jlg-m",
+  "reclaim_interval": "0",
+  "expected_receipt_interval": "0",
+  "claiming_interval": "0",
+  "acquisition_method": {
+    "value": "TECHNICAL",
+    "desc": "Technical"
+  },
+  "no_charge": false,
+  "cancellation_restriction": false,
+  "vendor_reference_number": "23913421",
+  "vendor_reference_number_type": {
+    "value": "IA"
+  },
+  "source_type": {
+    "value": "API",
+    "desc": "API"
+  },
+  "po_number": "",
+  "additional_order_reference": "POL-150974",
+  "invoice_reference": "",
+  "resource_metadata": {
+    "title": "The house on the canal /",
+    "author": "Harding, Thomas.",
+    "isbn": "9781536240702",
+    "publisher": "",
+    "mms_id": {
+      "value": "9952695118901401",
+      "link": "https://api-na.hosted.exlibrisgroup.com/almaws/v1/bibs/9952695118901401"
+    },
+    "publication_place": "",
+    "publication_year": "",
+    "vendor_title_number": "",
+    "system_control_number": [
+      ""
+    ]
+  },
+  "fund_distribution": [
+    {
+      "amount": {
+        "sum": "",
+        "currency": {}
+      },
+      "fund_code": {
+        "value": "",
+        "desc": ""
+      }
+    }
+  ],
+  "reporting_code": "Juvenile",
+  "secondary_reporting_code": "",
+  "tertiary_reporting_code": "",
+  "fourth_reporting_code": "",
+  "fifth_reporting_code": "",
+  "vendor_note": "",
+  "receiving_note": "JLG",
+  "alert": [
+    {
+      "value": "",
+      "desc": "Manually marked for review."
+    }
+  ],
+  "note": [
+    {
+      "note_text": "Jul 2025.",
+      "creation_date": "2025-08-08Z",
+      "created_by": "exl_api"
+    },
+    {
+      "note_text": "Ages 10-13.",
+      "creation_date": "2025-08-08Z",
+      "created_by": "exl_api"
+    }
+  ],
+  "location": [
+    {
+      "quantity": 1,
+      "library": {
+        "value": "OLIN",
+        "desc": "F.W. Olin Library"
+      },
+      "shelving_location": "oljuv",
+      "holding": [
+        {
+          "id": "22509349230001401",
+          "link": "https://api-na.hosted.exlibrisgroup.com/almaws/v1/bibs/9952695118901401/holdings/22509349230001401"
+        }
+      ],
+      "copy": [
+        {
+          "pid": "23509349220001401",
+          "item_policy": {
+            "value": "40",
+            "desc": "Circulating"
+          },
+          "receive_date": "2025-08-07Z",
+          "link": "https://api-na.hosted.exlibrisgroup.com/almaws/v1/bibs/9952695118901401/holdings/22509349230001401/items/23509349220001401"
+        }
+      ]
+    }
+  ],
+  "interested_user": [
+    {
+      "email": "m.hennessy@northeastern.edu",
+      "primary_id": "002630546",
+      "notify_receiving_activation": false,
+      "hold_item": false,
+      "notify_renewal": false,
+      "notify_cancel": false,
+      "first_name": "Maura",
+      "last_name": "Hennessy"
+    }
+  ],
+  "base_status": "",
+  "access_provider": "",
+  "manual_renewal": false,
+  "renewal_cycle": {},
+  "renewal_period": 0,
+  "renewal_note": "",
+  "material_type": {
+    "value": "BOOK",
+    "desc": "Book"
+  },
+  "created_date": "2025-08-08Z",
+  "expected_receipt_date": "2025-08-07Z"
+}

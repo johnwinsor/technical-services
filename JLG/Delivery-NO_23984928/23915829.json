@@ -1,0 +1,87 @@
+{
+    "link": "",
+    "owner": {
+        "value": "OLIN",
+        "desc": "F.W. Olin Library"
+    },
+    "type": {
+        "value": "PRINTED_BOOK_OT",
+        "desc": "Print Book - One Time"
+    },
+    "vendor": {
+        "value": "jlg-m"
+    },
+    "vendor_account": "jlg-m",
+    "acquisition_method": {
+        "value": "TECHNICAL"
+    },
+    "no_charge": "false",
+    "rush": "false",
+    "cancellation_restriction": "false",
+    "cancellation_restriction_note": "",
+    "price": {
+        "sum": "0.00",
+        "currency": {
+            "value": "USD"
+        }
+    },
+    "vendor_reference_number": "23915829",
+    "vendor_reference_number_type": {
+        "value": "SCO"
+    },
+    "source_type": {
+        "value": "API"
+    },
+    "additional_order_reference": "POL-139866",
+    "resource_metadata": {
+        "title": "At the window /",
+        "author": "Lim, Hope,",
+        "issn": "",
+        "isbn": "9781536224788"
+    },
+    "reporting_code": "Juvenile",
+    "vendor_note": "",
+    "receiving_note": "JLG",
+    "note": [
+        {
+            "note_text": "Ages 6-9."
+        },
+        {
+            "note_text": "Jul 2025"
+        }
+    ],
+    "location": [
+        {
+            "quantity": "1",
+            "library": {
+                "value": "OLIN"
+            },
+            "shelving_location": "oljuv",
+            "copy": [
+                {
+                    "item_policy": {
+                        "value": "40"
+                    },
+                    "is_temp_location": "false",
+                    "permanent_library": {
+                        "value": ""
+                    },
+                    "permanent_shelving_location": ""
+                }
+            ]
+        }
+    ],
+    "interested_user": [
+        {
+            "primary_id": "002630546",
+            "notify_receiving_activation": "false",
+            "hold_item": "false",
+            "notify_renewal": "false",
+            "notify_cancel": "false"
+        }
+    ],
+    "material_type": {
+        "value": "BOOK"
+    },
+    "expected_receipt_date": "2025-08-08Z"
+}

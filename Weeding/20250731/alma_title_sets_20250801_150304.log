@@ -1,0 +1,53 @@
+2025-08-01 15:03:04,342 - INFO - Logging to file: Weeding/20250731/alma_title_sets_20250801_150304.log
+2025-08-01 15:03:04,342 - INFO - Read 1 MMSIDs from Weeding/20250731/mmsids_all_items_suppressed.txt
+2025-08-01 15:03:04,342 - INFO - Sample MMSIDs: ['9952172819301401']...
+2025-08-01 15:03:04,342 - INFO - Creating title set: Olin-Weeded-Titles-20250801
+2025-08-01 15:03:04,346 - DEBUG - Starting new HTTPS connection (1): api-na.hosted.exlibrisgroup.com:443
+2025-08-01 15:03:04,595 - DEBUG - https://api-na.hosted.exlibrisgroup.com:443 "POST /almaws/v1/conf/sets?combine=None&set1=None&set2=None&apikey=l7xx44f5015286664d35846a3f80ce29ce84 HTTP/11" 200 None
+2025-08-01 15:03:04,596 - INFO - Title set created successfully with ID: 20567352480001401
+2025-08-01 15:03:04,596 - INFO - Adding 1 titles to set 20567352480001401
+2025-08-01 15:03:04,596 - DEBUG - Request URL: https://api-na.hosted.exlibrisgroup.com/almaws/v1/conf/sets/20567352480001401
+2025-08-01 15:03:04,596 - DEBUG - Request params: {'id_type': 'SYSTEM_NUMBER', 'op': 'add_members', 'fail_on_invalid_id': 'true', 'apikey': 'l7xx44f5015286664d35846a3f80ce29ce84'}
+2025-08-01 15:03:04,596 - DEBUG - Sample MMSIDs to add: ['9952172819301401']
+2025-08-01 15:03:04,735 - DEBUG - https://api-na.hosted.exlibrisgroup.com:443 "POST /almaws/v1/conf/sets/20567352480001401?id_type=SYSTEM_NUMBER&op=add_members&fail_on_invalid_id=true&apikey=l7xx44f5015286664d35846a3f80ce29ce84 HTTP/11" 200 None
+2025-08-01 15:03:04,736 - INFO - Response status: 200
+2025-08-01 15:03:04,736 - DEBUG - Response headers: {'X-Request-ID': 'v9j9PSJQOX', 'p3p': 'CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"', 'vary': 'accept-encoding, Accept-encoding', 'X-Exl-Api-Remaining': '375236', 'Content-Type': 'application/json;charset=UTF-8', 'Date': 'Fri, 01 Aug 2025 22:03:04 GMT', 'Keep-Alive': 'timeout=20', 'Connection': 'keep-alive', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked'}
+2025-08-01 15:03:04,736 - INFO - Titles added successfully
+2025-08-01 15:03:04,736 - DEBUG - Response data: {
+  "id": "20567352480001401",
+  "name": "Olin-Weeded-Titles-20250801",
+  "description": "Title Set",
+  "type": {
+    "value": "ITEMIZED",
+    "desc": "Itemized"
+  },
+  "content": {
+    "value": "IEP",
+    "desc": "Physical titles"
+  },
+  "status": {
+    "value": "ACTIVE",
+    "desc": "Active"
+  },
+  "origin": {
+    "value": "UI",
+    "desc": "Institution only"
+  },
+  "private": {
+    "value": "false",
+    "desc": "No"
+  },
+  "status_date": "2025-08-01T22:03:04.536Z",
+  "created_by": {
+    "value": "exl_api",
+    "desc": "API, Ex Libris"
+  },
+  "created_date": "2025-08-01T22:03:04.536Z",
+  "number_of_members": {
+    "value": 1,
+    "link": "https://api-na.hosted.exlibrisgroup.com/almaws/v1/conf/sets/20567352480001401/members"
+  },
+  "link": "https://api-na.hosted.exlibrisgroup.com/almaws/v1/conf/sets/20567352480001401"
+}
+2025-08-01 15:03:04,736 - INFO - Set now contains 1 members
+2025-08-01 15:03:04,832 - DEBUG - https://api-na.hosted.exlibrisgroup.com:443 "GET /almaws/v1/conf/sets/20567352480001401?apikey=l7xx44f5015286664d35846a3f80ce29ce84 HTTP/11" 200 None

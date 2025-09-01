@@ -1,0 +1,63 @@
+
+=== Run completed at 2025-08-13 15:14:28 ===
+Filename	POL Number	MMS ID
+----------------------------------------
+
+Found 7 JSON files to process
+============================================================
+Processing: 2025071101.json
+  ✓ Success! Created POL: POL-151715
+    MMS ID: 9952698818901401
+    Title: Mi prima, la quinceanera /...
+    Vendor Ref: 2025071101
+
+Processing: 24017111.json
+  ✓ Success! Created POL: POL-151716
+    MMS ID: 9952698818801401
+    Title: Gus and Glory /...
+    Vendor Ref: 24017111
+
+Processing: 23623126.json
+  ✓ Success! Created POL: POL-151717
+    MMS ID: 9952698818701401
+    Title: Survival scout : lost at sea /...
+    Vendor Ref: 23623126
+
+Processing: 23718321.json
+  ✓ Success! Created POL: POL-151718
+    MMS ID: 9952698818601401
+    Title: Kaho'olawe : the true story of an island and her p...
+    Vendor Ref: 23718321
+
+Processing: 23838834.json
+  ✓ Success! Created POL: POL-151719
+    MMS ID: 9952698818501401
+    Title: The moving book /...
+    Vendor Ref: 23838834
+
+Processing: 23839160.json
+  ✓ Success! Created POL: POL-151720
+    MMS ID: 9952698818401401
+    Title: Lone Wolf goes to the library /...
+    Vendor Ref: 23839160
+
+Processing: 23914474.json
+  ✓ Success! Created POL: POL-151721
+    MMS ID: 9952698818301401
+    Title: Graciela in the abyss /...
+    Vendor Ref: 23914474
+
+============================================================
+PROCESSING SUMMARY
+Total files processed: 7
+Successfully created: 7
+Errors encountered: 0
+
+Created POL Numbers and MMS IDs:
+  - POL: POL-151715 | MMS ID: 9952698818901401
+  - POL: POL-151716 | MMS ID: 9952698818801401
+  - POL: POL-151717 | MMS ID: 9952698818701401
+  - POL: POL-151718 | MMS ID: 9952698818601401
+  - POL: POL-151719 | MMS ID: 9952698818501401
+  - POL: POL-151720 | MMS ID: 9952698818401401
+  - POL: POL-151721 | MMS ID: 9952698818301401

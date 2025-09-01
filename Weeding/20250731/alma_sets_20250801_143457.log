@@ -1,0 +1,9 @@
+2025-08-01 14:34:57,272 - INFO - Logging to file: Weeding/20250731/alma_sets_20250801_143457.log
+2025-08-01 14:34:57,273 - INFO - Read 36 barcodes from Weeding/20250731/barcodes-mmsids.csv
+2025-08-01 14:34:57,273 - INFO - Sample barcodes: ['33086001115765', '33086001115989', '33086001115773']...
+2025-08-01 14:34:57,273 - INFO - Creating set: Olin-Weeded-Items-20250801
+2025-08-01 14:34:57,506 - INFO - Set created successfully with ID: 20567347200001401
+2025-08-01 14:34:57,586 - INFO - Adding 36 items to set 20567347200001401 using BARCODE
+2025-08-01 14:35:00,298 - INFO - Response status: 200
+2025-08-01 14:35:00,298 - INFO - Items added successfully
+2025-08-01 14:35:00,298 - INFO - Set now contains 36 members
