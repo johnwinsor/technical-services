@@ -1,0 +1,106 @@
+{
+    "owner": {
+        "value": "OLIN",
+        "desc": "F.W. Olin Library"
+    },
+    "type": {
+        "value": "PRINTED_BOOK_OT",
+        "desc": "Print Book - One Time"
+    },
+    "vendor": {
+        "value": "amazon"
+    },
+    "vendor_account": "amazon",
+    "acquisition_method": {
+        "value": "PURCHASE",
+        "desc": "Purchase"
+    },
+    "no_charge": false,
+    "rush": false,
+    "cancellation_restriction": false,
+    "price": {
+        "sum": "11.48",
+        "currency": {
+            "value": "USD"
+        }
+    },
+    "vendor_reference_number": "113-7500940-2443458",
+    "vendor_reference_number_type": {
+        "value": "IA"
+    },
+    "source_type": {
+        "value": "API"
+    },
+    "additional_order_reference": "pcard purchase",
+    "resource_metadata": {
+        "title": "Just like tomorrow",
+        "author": "Faïza Guène",
+        "isbn": "1862301581",
+        "publisher": "Definitions",
+        "publication_year": "2007",
+        "system_control_number": [
+            "171292010"
+        ]
+    },
+    "fund_distribution": [
+        {
+            "fund_code": {
+                "value": "rnlds"
+            },
+            "amount": {
+                "sum": "11.48",
+                "currency": {
+                    "value": "USD"
+                }
+            }
+        }
+    ],
+    "reporting_code": "Fiction",
+    "receiving_note": "Interested User | Reserve",
+    "material_type": {
+        "value": "BOOK"
+    },
+    "location": [
+        {
+            "quantity": 1,
+            "library": {
+                "value": "OLIN"
+            },
+            "shelving_location": "olord",
+            "copy": [
+                {
+                    "item_policy": {
+                        "value": "40"
+                    },
+                    "is_temp_location": false,
+                    "permanent_library": {
+                        "value": ""
+                    },
+                    "permanent_shelving_location": ""
+                }
+            ]
+        }
+    ],
+    "expected_receipt_date": "2025-09-27",
+    "note": [
+        {
+            "note_text": "Reserve Note: CLTR 1120 Introduction to Languages, Literature and Culture - Brinda Mehta"
+        }
+    ],
+    "interested_user": [
+        {
+            "primary_id": "002630310",
+            "notify_receiving_activation": true,
+            "hold_item": true,
+            "notify_renewal": false,
+            "notify_cancel": false
+        },
+        {
+            "primary_id": "002630514",
+            "notify_receiving_activation": true,
+            "hold_item": false,
+            "notify_renewal": false,
+            "notify_cancel": false
+        }
+    ]
+}

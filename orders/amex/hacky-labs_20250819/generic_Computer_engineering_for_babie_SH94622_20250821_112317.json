@@ -1,0 +1,106 @@
+{
+    "owner": {
+        "value": "OLIN",
+        "desc": "F.W. Olin Library"
+    },
+    "type": {
+        "value": "PRINTED_BOOK_OT",
+        "desc": "Print Book - One Time"
+    },
+    "vendor": {
+        "value": "hacky-m"
+    },
+    "vendor_account": "hacky-m",
+    "acquisition_method": {
+        "value": "VENDOR_SYSTEM",
+        "desc": "Purchase at Vendor System"
+    },
+    "no_charge": false,
+    "rush": false,
+    "cancellation_restriction": false,
+    "cancellation_restriction_note": "",
+    "price": {
+        "sum": "34.50",
+        "currency": {
+            "value": "USD"
+        }
+    },
+    "vendor_reference_number": "SH94622",
+    "vendor_reference_number_type": {
+        "value": "IA",
+        "desc": "Internal Account Number"
+    },
+    "source_type": {
+        "value": "API"
+    },
+    "additional_order_reference": "pcard purchase",
+    "resource_metadata": {
+        "title": "Computer engineering for babies",
+        "author": "Chase Roberts",
+        "isbn": "9781735208701",
+        "publisher": "Hacky Labs",
+        "publication_year": "2024"
+    },
+    "fund_distribution": [
+        {
+            "fund_code": {
+                "value": "rnlds",
+                "desc": "Flora Elizabeth Reynolds Book Fund"
+            },
+            "amount": {
+                "sum": "34.50",
+                "currency": {
+                    "value": "USD"
+                }
+            }
+        }
+    ],
+    "reporting_code": "Computer Science",
+    "vendor_note": "",
+    "receiving_note": "Interested User(H) | Reserve",
+    "material_type": {
+        "value": "BOOK",
+        "desc": "Book"
+    },
+    "location": [
+        {
+            "quantity": 1,
+            "library": {
+                "value": "OLIN",
+                "desc": "F.W. Olin Library"
+            },
+            "shelving_location": "olord",
+            "copy": [
+                {
+                    "item_policy": {
+                        "value": "40"
+                    },
+                    "is_temp_location": false,
+                    "permanent_library": {
+                        "value": "",
+                        "desc": ""
+                    },
+                    "permanent_shelving_location": ""
+                }
+            ]
+        }
+    ],
+    "interested_user": [
+        {
+            "primary_id": "002630310",
+            "notify_receiving_activation": true,
+            "hold_item": true,
+            "notify_renewal": false,
+            "notify_cancel": false
+        }
+    ],
+    "note": [
+        {
+            "note_text": "PayPal"
+        },
+        {
+            "note_text": "Reserve Note: Cornerstone of Engineering (GE 1501) Instructor Keyvani Someh Leila"
+        }
+    ],
+    "expected_receipt_date": "2025-09-20"
+}

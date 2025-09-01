@@ -1,0 +1,30 @@
+[project]
+name = "technical-services"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "rich>=13.0.0",
+    "questionary>=2.0.0",
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.1",
+    "pip==25.1.1",
+    "pymarc==5.2.3",
+    "pymupdf>=1.26.3",
+    "pypdf2==3.0.1",
+    "python-dotenv>=1.1.1",
+    "requests>=2.32.4",
+    "bookops-worldcat>=1.2.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/library_acquisitions"]
+
+[project.scripts]
+create-pols = "library_acquisitions.po_creation.manual_pol_creator:main"
+amazon-csv-to-json = "library_acquisitions.po_creation.amazon_pol_creator:main"
