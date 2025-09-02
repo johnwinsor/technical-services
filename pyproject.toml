@@ -28,3 +28,5 @@ packages = ["src/library_acquisitions"]
 [project.scripts]
 create-pols = "library_acquisitions.po_creation.manual_pol_creator:main"
 amazon-csv-to-json = "library_acquisitions.po_creation.amazon_pol_creator:main"
+alma-check-holdings = "collection_management.alma_holdings_checker:main"
+
