@@ -47,7 +47,7 @@ technical-services/
     └── Delivery-NO_#######/
 ├── src/
 │   └── collection_management/
-│       ├── .env
+│       ├── __init__.py
 │   └── library_acquisitions/
 │       ├── __init__.py
 │       ├── .env

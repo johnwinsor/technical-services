@@ -190,8 +190,11 @@ def main():
         
         # Save results
         if suppressed_mmsids:
-            base_name = os.path.dirname(csv_file)
-            output_file = f'{base_name}/mmsids_all_items_suppressed.txt'
+            # Get the directory of the input file, or use current directory if empty
+            base_dir = os.path.dirname(csv_file)
+            if not base_dir:  # If file is in current directory
+                base_dir = '.'
+            output_file = os.path.join(base_dir, 'mmsids_all_items_suppressed.txt')
             with open(output_file, 'w') as f:
                 for mms_id in suppressed_mmsids:
                     f.write(f"{mms_id}\n")
