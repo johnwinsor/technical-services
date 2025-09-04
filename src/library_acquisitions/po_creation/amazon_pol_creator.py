@@ -1,15 +1,24 @@
 #!/usr/bin/env python
 
 # Amazon CSV to Alma PO Line JSON Converter
-# Script Version: 2.0
-# Last Updated: 2025-08-18
+# Script Version: 3.0
+# Last Updated: 2025-09-04
+# Enhanced with rich console and questionary UI
 
 import csv
 import json
 import sys
 import re
+import os
 from datetime import datetime, timedelta
 import pandas as pd
+import questionary
+from rich.console import Console
+from rich.table import Table
+from rich.panel import Panel
+from rich.progress import track
+
+console = Console()
 
 def clean_asin(asin):
     """Clean ASIN field, removing any extra whitespace"""
@@ -81,7 +90,183 @@ def add_days_to_date(date_str, days):
     except:
         return ""
 
-def create_amazon_po_line_json(row_data, user_id, reporting_code, notify=None, hold=None, receiving_note="", reserve_note=""):
+def get_global_settings():
+    """Get global settings that apply to all orders"""
+    subjects = [
+        'Archives', 'Architecture', 'Art', 'Biology', 'Book Art', 'Business',
+        'Chemistry', 'Communications', 'Computer Science', 'Cooking', 'Dance',
+        'Data Science', 'Economics', 'Education', 'English Language Studies',
+        'Entrepreneurship', 'Environmental Science', 'Ethnic Studies', 'Fiction',
+        'Game Design', 'General', 'General Science', 'Graphic Novels',
+        'Health Sciences', 'History', 'Juvenile', 'Library Science', 'Mathematics',
+        'Music', 'Philosophy', 'Poetry', 'Political Science', 'Psychology',
+        'Public Policy', 'Religion', 'Sociology', 'Theatre', 'WGSS'
+    ]
+    
+    console.print(Panel.fit("Global Settings", style="bold blue"))
+    console.print("These settings will apply to all orders in the CSV file:", style="cyan")
+    
+    # Get global reporting code
+    reporting_code = questionary.autocomplete(
+        "Select reporting code/subject:",
+        choices=subjects,
+        default="General",
+        validate=lambda text: text in subjects or "Please select a valid subject"
+    ).ask()
+    
+    # Get global receiving note
+    receiving_note = questionary.text(
+        "Default receiving note (press Enter for none):"
+    ).ask() or ""
+    
+    # Get global reserve note
+    reserve_note = questionary.text(
+        "Default reserve note (press Enter for none):"
+    ).ask() or ""
+    
+    # Ask about interested users
+    use_interested_user = questionary.confirm(
+        "Add interested user to all orders?",
+        default=False
+    ).ask()
+    
+    user_settings = {}
+    if use_interested_user:
+        user_id = questionary.text(
+            "Interested user ID (9 digits):",
+            validate=lambda text: (len(text.strip()) == 9 and text.strip().isdigit()) or "Must be exactly 9 digits"
+        ).ask()
+        
+        notify = questionary.confirm(
+            "Notify user on receiving activation?",
+            default=True
+        ).ask()
+        
+        hold = questionary.confirm(
+            "Hold item for user?",
+            default=False
+        ).ask()
+        
+        user_settings = {
+            'user_id': user_id,
+            'notify': notify,
+            'hold': hold
+        }
+    
+    return {
+        'reporting_code': reporting_code,
+        'receiving_note': receiving_note,
+        'reserve_note': reserve_note,
+        'user_settings': user_settings
+    }
+
+def validate_receiving_categories(selected):
+    """Validate receiving categories."""
+    if not selected:
+        return "Please select at least one category"
+    if "None" in selected and len(selected) > 1:
+        return "Cannot select 'None' with other categories"
+    return True
+
+def get_per_item_settings(row_data, global_settings):
+    """Get settings for individual items, with option to use globals"""
+    title = row_data.get('Title', '').strip()
+    asin = clean_asin(row_data.get('ASIN', ''))
+    
+
+    
+    # Get item-specific settings
+    subjects = [
+        'Archives', 'Architecture', 'Art', 'Biology', 'Book Art', 'Business',
+        'Chemistry', 'Communications', 'Computer Science', 'Cooking', 'Dance',
+        'Data Science', 'Economics', 'Education', 'English Language Studies',
+        'Entrepreneurship', 'Environmental Science', 'Ethnic Studies', 'Fiction',
+        'Game Design', 'General', 'General Science', 'Graphic Novels',
+        'Health Sciences', 'History', 'Juvenile', 'Library Science', 'Mathematics',
+        'Music', 'Philosophy', 'Poetry', 'Political Science', 'Psychology',
+        'Public Policy', 'Religion', 'Sociology', 'Theatre', 'WGSS'
+    ]
+    
+    reporting_code = questionary.autocomplete(
+        "Subject for this item:",
+        choices=subjects,
+        default=global_settings['reporting_code'],
+        validate=lambda text: text in subjects or "Please select a valid subject"
+    ).ask()
+    
+    # Receiving categories
+    receiving_categories = questionary.checkbox(
+        "Receiving note categories:",
+        choices=["None", "Note", "Interested User", "Reserve", "Display", "Replacement"],
+        validate=lambda selected: validate_receiving_categories(selected)
+    ).ask()
+    
+    receiving_note = " | ".join(receiving_categories) if receiving_categories and "None" not in receiving_categories else "None"
+    
+    # Additional notes
+    additional_note = ""
+    if "Note" in receiving_categories:
+        additional_note = questionary.text("Additional notes:").ask() or ""
+    
+    # Reserve note
+    reserve_note = ""
+    if "Reserve" in receiving_categories:
+        reserve_note = questionary.text("Reserve note:").ask() or ""
+    
+    # Interested user
+    user_settings = {}
+    if "Interested User" in receiving_categories:
+        user_id = questionary.text(
+            "Interested user ID (9 digits):",
+            validate=lambda text: (len(text.strip()) == 9 and text.strip().isdigit()) or "Must be exactly 9 digits"
+        ).ask()
+        
+        notify = questionary.confirm(
+            "Notify user on receiving activation?",
+            default=True
+        ).ask()
+        
+        hold = questionary.confirm(
+            "Hold item for user?",
+            default=False
+        ).ask()
+        
+        user_settings = {
+            'user_id': user_id,
+            'notify': notify,
+            'hold': hold
+        }
+    
+    return {
+        'reporting_code': reporting_code,
+        'receiving_note': receiving_note,
+        'reserve_note': reserve_note,
+        'additional_note': additional_note,
+        'user_settings': user_settings
+    }
+
+def display_item_summary(row_data, settings, output_filename):
+    """Display summary for a processed item"""
+    table = Table(title="Item Summary", show_header=True, header_style="bold magenta")
+    table.add_column("Field", style="cyan", width=20)
+    table.add_column("Value", style="white", width=50)
+    
+    table.add_row("Title", row_data.get('Title', '')[:50] + "..." if len(row_data.get('Title', '')) > 50 else row_data.get('Title', ''))
+    table.add_row("ASIN", clean_asin(row_data.get('ASIN', '')))
+    table.add_row("Price", f"${format_currency_amount(row_data.get('Item Net Total', 0))}")
+    table.add_row("Order ID", row_data.get('Order ID', ''))
+    table.add_row("Subject", settings['reporting_code'])
+    table.add_row("Receiving Note", settings['receiving_note'])
+    
+    if settings.get('user_settings') and settings['user_settings'].get('user_id'):
+        user_info = settings['user_settings']
+        user_text = f"{user_info['user_id']} (notify: {user_info['notify']}, hold: {user_info['hold']})"
+        table.add_row("Interested User", user_text)
+    
+    table.add_row("Output File", output_filename)
+    console.print(table)
+
+def create_amazon_po_line_json(row_data, settings):
     """Create JSON structure conforming to Alma po_line schema from Amazon CSV data"""
     
     # Extract key fields from CSV row
@@ -171,9 +356,9 @@ def create_amazon_po_line_json(row_data, user_id, reporting_code, notify=None, h
                 }
             }
         ],
-        "reporting_code": reporting_code,
+        "reporting_code": settings['reporting_code'],
         "vendor_note": f"Amazon Order ID: {order_id}",
-        "receiving_note": receiving_note,
+        "receiving_note": settings['receiving_note'],
         "note": [],
         "location": [
             {
@@ -198,17 +383,14 @@ def create_amazon_po_line_json(row_data, user_id, reporting_code, notify=None, h
         ]
     }
     
-    # Only add interested_user section if user_id is provided
-    if user_id:
-        # Convert yes/no to true/false for API
-        notify_value = "true" if notify and notify.lower() in ['yes', 'y', 'true'] else "false"
-        hold_value = "true" if hold and hold.lower() in ['yes', 'y', 'true'] else "false"
-        
+    # Add interested_user section if user_id is provided
+    user_settings = settings.get('user_settings', {})
+    if user_settings.get('user_id'):
         po_line["interested_user"] = [
             {
-                "primary_id": user_id,
-                "notify_receiving_activation": notify_value,
-                "hold_item": hold_value,
+                "primary_id": user_settings['user_id'],
+                "notify_receiving_activation": "true" if user_settings.get('notify') else "false",
+                "hold_item": "true" if user_settings.get('hold') else "false",
                 "notify_renewal": "false",
                 "notify_cancel": "false"
             }
@@ -220,8 +402,10 @@ def create_amazon_po_line_json(row_data, user_id, reporting_code, notify=None, h
     
     # Add notes if available
     notes = []
-    if reserve_note:
-        notes.append({"note_text": f"Reserve Note: {reserve_note}"})
+    if settings.get('reserve_note'):
+        notes.append({"note_text": f"Reserve Note: {settings['reserve_note']}"})
+    if settings.get('additional_note'):
+        notes.append({"note_text": settings['additional_note']})
     if po_number:
         notes.append({"note_text": f"Amazon PO Number: {po_number}"})
     if asin:
@@ -233,27 +417,25 @@ def create_amazon_po_line_json(row_data, user_id, reporting_code, notify=None, h
     
     return po_line
 
-def main():
-    subjects = ['Archives','Architecture','Art','Biology','Book Art','Business','Chemistry','Communications','Computer Science','Cooking','Dance','Data Science','Economics','Education','English Language Studies','Entrepreneurship','Environmental Science','Ethnic Studies','Fiction','Game Design','General','General Science','Graphic Novels','Health Sciences','History','Juvenile','Library Science','Mathematics','Music','Philosophy','Poetry','Political Science','Psychology','Public Policy','Religion','Sociology','Theatre','WGSS']
-    
-    if len(sys.argv) != 2:
-        print("Usage: python amazon_csv_to_json.py <csv_filename>")
+def process_csv_file(csv_filename):
+    """Process the CSV file with enhanced UI"""
+    if not os.path.exists(csv_filename):
+        console.print(f"[bold red]Error:[/bold red] Could not find file '{csv_filename}'", style="bold red")
+        console.print(f"Current working directory: {os.getcwd()}")
         sys.exit(1)
     
-    csv_filename = sys.argv[1]
+    console.print(Panel.fit("Amazon CSV to Alma PO Line Converter", style="bold blue"))
+    console.print(f"Processing file: [bold cyan]{csv_filename}[/bold cyan]")
     
-    # Configuration - adjust these as needed
-    user_id = "002630546"  # Default interested user ID
-    reporting_code = "General"
+    # Get global settings first (these will be used as defaults)
+    global_settings = get_global_settings()
     
     processed_count = 0
     error_count = 0
-    
-    print(f"Processing Amazon CSV file: {csv_filename}")
-    print("-" * 50)
+    skipped_count = 0
     
     try:
-        # Read CSV file
+        # Read and preview CSV file
         with open(csv_filename, 'r', encoding='utf-8') as csvfile:
             # Detect delimiter
             sample = csvfile.read(1024)
@@ -262,83 +444,143 @@ def main():
             delimiter = sniffer.sniff(sample).delimiter
             
             reader = csv.DictReader(csvfile, delimiter=delimiter)
+            rows = list(reader)
             
-            for i, row in enumerate(reader, 1):
-                try:
-                    # Skip rows without title or ASIN
-                    if not row.get('Title', '').strip() or not row.get('ASIN', '').strip():
-                        print(f"⚠ Skipping row {i}: Missing title or ASIN")
-                        continue
-                    
-                    print(f"Processing row {i}: {row.get('Title', 'N/A')[:60]}...")
-                    
-                    val = input("Enter Valid Subject: ")
-                    while val not in subjects:
-                        print(f'Try again. Valid Subjects are: {subjects}')
-                        val = input("Enter Valid Subject: ")
-                    reporting_code = val
-                    
-                    receiving_note = input("Enter Receiving Note (optional): ").strip()
-                    reserve_note = input("Enter Reserve Note (optional): ").strip()
-                    
-                    user_id = input("Enter Interested User (9 digits, or press Enter for none): ").strip()
-                    while user_id and not (user_id.isdigit() and len(user_id) == 9):
-                        print("Invalid user ID. Please enter exactly 9 digits or press Enter for none.")
-                        user_id = input("Enter Interested User (9 digits, or press Enter for none): ").strip()
-                    
-                    # Convert empty string to None for cleaner handling
-                    user_id = user_id if user_id else None
-                    
-                    # Initialize notify and hold variables
-                    notify = None
-                    hold = None
-                    
-                    if user_id:
-                        notify = input("Notify user on receiving activation? (yes/no/true/false): ").strip().lower()
-                        while notify not in ['yes', 'no', 'y', 'n', 'true', 'false']:
-                            print("Please enter yes, no, true, or false")
-                            notify = input("Notify user on receiving activation? (yes/no/true/false): ").strip().lower()
-                        
-                        hold = input("Hold item for user? (yes/no/true/false): ").strip().lower()
-                        while hold not in ['yes', 'no', 'y', 'n', 'true', 'false']:
-                            print("Please enter yes, no, true, or false")
-                            hold = input("Hold item for user? (yes/no/true/false): ").strip().lower()
-                    
-                    # Create JSON structure
-                    po_line_json = create_amazon_po_line_json(row, user_id, reporting_code, notify, hold, receiving_note, reserve_note)
-                    
-                    # Create output filename based on ASIN
-                    asin = clean_asin(row.get('ASIN', ''))
-                    order_id = row.get('Order ID', '').strip().replace(' ', '_')
-                    output_filename = f"amazon_{asin}_{order_id}.json"
-                    
+        console.print(f"\n[bold green]Found {len(rows)} rows in CSV file[/bold green]")
+        console.print(f"[cyan]You'll be able to review and customize each item individually.[/cyan]")
+        console.print(f"[cyan]Global settings will be used as defaults, but you can change them for any item.[/cyan]")
+        
+        # Ask if they want to process all or preview a few
+        process_all = questionary.confirm(
+            f"Process all {len(rows)} items? (No = preview first 5 items only)",
+            default=True
+        ).ask()
+        
+        if not process_all:
+            rows = rows[:5]
+            console.print(f"[yellow]Processing first 5 items only[/yellow]")
+        
+        console.print("\n" + "="*60)
+        
+        for i, row in enumerate(rows, 1):
+            try:
+                # Skip rows without title or ASIN
+                if not row.get('Title', '').strip() or not row.get('ASIN', '').strip():
+                    console.print(f"[yellow]⚠  Skipping row {i}: Missing title or ASIN[/yellow]")
+                    skipped_count += 1
+                    continue
+                
+                console.print(f"\n[bold blue]═══ Processing Item {i} of {len(rows)} ═══[/bold blue]")
+                
+                # Display key item information first
+                title = row.get('Title', '').strip()
+                order_id = row.get('Order ID', '').strip()
+                csv_receiving_note = row.get('Receiving note', '').strip()
+                
+                console.print(f"[bold cyan]Title:[/bold cyan] {title[:60]}...")
+                console.print(f"[bold cyan]Order ID:[/bold cyan] {order_id}")
+                console.print(f"[bold cyan]CSV Receiving Note:[/bold cyan] {csv_receiving_note or 'None'}")
+                
+                # Always get individual settings for each item
+                item_settings = get_per_item_settings(row, global_settings)
+                
+                # Create JSON structure
+                po_line_json = create_amazon_po_line_json(row, item_settings)
+                
+                # Create output filename based on ASIN
+                asin = clean_asin(row.get('ASIN', ''))
+                order_id = row.get('Order ID', '').strip().replace(' ', '_')
+                timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+                output_filename = f"amazon_{asin}_{order_id}_{timestamp}.json"
+                
+                # Show summary for this item
+                display_item_summary(row, item_settings, output_filename)
+                
+                # Confirm before saving (with option to skip)
+                save_choice = questionary.select(
+                    "What would you like to do with this item?",
+                    choices=[
+                        questionary.Choice("Save this PO", "save"),
+                        questionary.Choice("Skip this item", "skip"),
+                        questionary.Choice("Stop processing and exit", "exit")
+                    ]
+                ).ask()
+                
+                if save_choice == "save":
                     # Write JSON file
                     with open(output_filename, 'w', encoding='utf-8') as json_file:
                         json.dump(po_line_json, json_file, indent=4, ensure_ascii=False)
                     
-                    print(f"✓ Created: {output_filename}")
-                    print(f"  Title: {row.get('Title', 'N/A')[:60]}...")
-                    print(f"  ASIN: {asin}")
-                    print(f"  Price: ${format_currency_amount(row.get('Item Net Total', 0))}")
+                    console.print(f"[bold green]✓ Created:[/bold green] {output_filename}")
                     processed_count += 1
                     
-                except Exception as e:
-                    print(f"✗ Error processing row {i}: {str(e)}")
-                    error_count += 1
-                    continue
+                elif save_choice == "skip":
+                    console.print("[yellow]⚠ Skipped by user choice[/yellow]")
+                    skipped_count += 1
                     
+                else:  # exit
+                    console.print(f"[yellow]Processing stopped by user at item {i}[/yellow]")
+                    break
+                
+            except KeyboardInterrupt:
+                console.print(f"\n[yellow]Processing interrupted by user[/yellow]")
+                break
+            except Exception as e:
+                console.print(f"[bold red]✗ Error processing row {i}: {str(e)}[/bold red]")
+                error_count += 1
+                
+                # Ask if they want to continue after an error
+                if not questionary.confirm("Continue processing remaining items?").ask():
+                    break
+                continue
+                
     except FileNotFoundError:
-        print(f"Error: Could not find file '{csv_filename}'")
+        console.print(f"[bold red]Error: Could not find file '{csv_filename}'[/bold red]")
         sys.exit(1)
     except Exception as e:
-        print(f"Error reading CSV file: {str(e)}")
+        console.print(f"[bold red]Error reading CSV file: {str(e)}[/bold red]")
         sys.exit(1)
     
-    print("-" * 50)
-    print(f"Processing complete!")
-    print(f"Successfully processed: {processed_count} records")
-    print(f"Errors encountered: {error_count} records")
-    print(f"JSON files created in current directory")
+    # Final summary
+    console.print("\n" + "="*60)
+    summary_table = Table(title="Processing Summary", show_header=True, header_style="bold magenta")
+    summary_table.add_column("Status", style="cyan")
+    summary_table.add_column("Count", style="white")
+    
+    summary_table.add_row("Successfully processed", f"[green]{processed_count}[/green]")
+    summary_table.add_row("Errors encountered", f"[red]{error_count}[/red]")
+    summary_table.add_row("Skipped items", f"[yellow]{skipped_count}[/yellow]")
+    summary_table.add_row("Total rows processed", str(len(rows)))
+    
+    console.print(summary_table)
+    console.print(f"\n[bold green]Processing complete![/bold green] JSON files created in current directory.")
+
+def main():
+    """Main function with enhanced UI"""
+    console.print(Panel.fit("Amazon CSV to Alma PO Line JSON Converter", style="bold blue"))
+    
+    if len(sys.argv) != 2:
+        console.print("[bold red]Usage:[/bold red] python amazon_pol_creator.py <csv_filename>")
+        console.print("\n[yellow]Please provide the path to your Amazon CSV file as an argument.[/yellow]")
+        
+        # Option to browse for file
+        if questionary.confirm("Would you like to enter the filename interactively?").ask():
+            csv_filename = questionary.path(
+                "Enter path to CSV file:",
+                validate=lambda path: os.path.exists(path) or f"File '{path}' does not exist"
+            ).ask()
+        else:
+            sys.exit(1)
+    else:
+        csv_filename = sys.argv[1]
+    
+    try:
+        process_csv_file(csv_filename)
+    except KeyboardInterrupt:
+        console.print(f"\n[yellow]Program interrupted by user. Goodbye![/yellow]")
+    except Exception as e:
+        console.print(f"[bold red]Unexpected error: {str(e)}[/bold red]")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
