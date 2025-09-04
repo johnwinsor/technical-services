@@ -106,7 +106,18 @@ def main():
         print(f"No JSON files found matching pattern: {json_pattern}")
         sys.exit(1)
     
+    # Determine the output directory based on the first JSON file
+    if json_files:
+        first_file_dir = os.path.dirname(json_files[0])
+        if first_file_dir:  # If there's a directory path
+            output_dir = first_file_dir
+        else:  # If files are in current directory
+            output_dir = "."
+    else:
+        output_dir = "."
+    
     print(f"Found {len(json_files)} JSON files to process")
+    print(f"Output directory: {output_dir}")
     print("=" * 60)
     
     # Process each JSON file
@@ -169,11 +180,13 @@ def main():
         for entry in created_pol_numbers:
             print(f"  - POL: {entry['pol_number']} | MMS ID: {entry['mms_id']}")
     
-    # Save results to file
+    # Save results to file in the same directory as the input files
     if created_pol_numbers:
         from datetime import datetime
         
-        with open('created_pol_numbers.txt', 'a') as f:
+        log_file_path = os.path.join(output_dir, 'created_pol_numbers.txt')
+        
+        with open(log_file_path, 'a') as f:
             # Add timestamp for this run
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             f.write(f"\n=== Run completed at {timestamp} ===\n")
@@ -181,7 +194,30 @@ def main():
             f.write("-" * 40 + "\n")
             for entry in created_pol_numbers:
                 f.write(f"{entry['filename']}\t{entry['pol_number']}\t{entry['mms_id']}\n")
-        print(f"\nResults appended to: created_pol_numbers.txt")
+        print(f"\nResults appended to: {log_file_path}")
+
+def test_api_connection():
+    """Test function to verify API connectivity"""
+    try:
+        API_KEY, BASE_URL = get_config()
+    except SystemExit:
+        return False
+    
+    # Test with a simple GET request to verify API key works
+    url = f"{BASE_URL}/almaws/v1/acq/vendors"
+    params = {'apikey': API_KEY, 'limit': 1}
+    
+    try:
+        response = requests.get(url, params=params, timeout=10)
+        if response.status_code == 200:
+            print("✅ API connection successful!")
+            return True
+        else:
+            print(f"❌ API connection failed: HTTP {response.status_code}")
+            return False
+    except Exception as e:
+        print(f"❌ API connection error: {str(e)}")
+        return False
 
 def test_api_connection():
     """Test function to verify API connectivity"""

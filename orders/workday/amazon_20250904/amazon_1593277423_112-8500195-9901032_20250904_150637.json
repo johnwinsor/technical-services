@@ -1,0 +1,94 @@
+{
+    "owner": {
+        "value": "OLIN",
+        "desc": "F.W. Olin Library"
+    },
+    "type": {
+        "value": "PRINTED_BOOK_OT",
+        "desc": "Print Book - One Time"
+    },
+    "vendor": {
+        "value": "amazon"
+    },
+    "vendor_account": "amazon",
+    "acquisition_method": {
+        "value": "VENDOR_SYSTEM",
+        "desc": "Purchase at Vendor System"
+    },
+    "material_type": {
+        "value": "BOOK"
+    },
+    "additional_order_reference": "punchout purchase",
+    "no_charge": "false",
+    "rush": "false",
+    "cancellation_restriction": "false",
+    "price": {
+        "sum": "24.61",
+        "currency": {
+            "value": "USD"
+        }
+    },
+    "vendor_reference_number": "112-8500195-9901032",
+    "vendor_reference_number_type": {
+        "value": "IA"
+    },
+    "source_type": {
+        "value": "API"
+    },
+    "resource_metadata": {
+        "title": "The Manga Guide to Cryptography (The Manga Guides)",
+        "author": "No Starch Press",
+        "isbn": "1593277423",
+        "vendor_title_number": "1593277423"
+    },
+    "fund_distribution": [
+        {
+            "amount": {
+                "sum": "24.61",
+                "currency": {
+                    "value": "USD",
+                    "desc": "US Dollar"
+                }
+            },
+            "fund_code": {
+                "value": "rnlds",
+                "desc": "Flora Elizabeth Reynolds Book Fund"
+            }
+        }
+    ],
+    "reporting_code": "Computer Science",
+    "vendor_note": "Amazon Order ID: 112-8500195-9901032",
+    "receiving_note": "None",
+    "location": [
+        {
+            "quantity": "1",
+            "library": {
+                "value": "OLIN"
+            },
+            "shelving_location": "olord",
+            "copy": [
+                {
+                    "item_policy": {
+                        "value": "40"
+                    },
+                    "is_temp_location": "false",
+                    "permanent_library": {
+                        "value": ""
+                    },
+                    "permanent_shelving_location": ""
+                }
+            ]
+        }
+    ],
+    "note": [
+        {
+            "note_text": "Amazon PO Number: PO00006621"
+        },
+        {
+            "note_text": "ASIN: 1593277423"
+        },
+        {
+            "note_text": "Account Group: Jaggaer Punchout Group Prod"
+        }
+    ]
+}
