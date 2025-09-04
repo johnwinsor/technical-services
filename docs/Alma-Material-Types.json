@@ -1,0 +1,1007 @@
+{
+  "name": "PhysicalMaterialType",
+  "description": "Type of physical inventory material",
+  "sub_system": {
+    "value": "INVENTORY",
+    "desc": "Inventory"
+  },
+  "patron_facing": true,
+  "updated_by": "e.beach",
+  "update_date": "2025-01-30Z",
+  "language": {
+    "value": "en",
+    "desc": "English"
+  },
+  "scope": {
+    "institution_id": {
+      "value": "01NEU_INST",
+      "desc": "Northeastern University"
+    },
+    "library_id": {
+      "value": "",
+      "desc": ""
+    }
+  },
+  "row": [
+    {
+      "code": "BOOK",
+      "description": "Book",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "ISSUE",
+      "description": "Issue",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "DVD",
+      "description": "DVD",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "CD",
+      "description": "Compact Disc",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "CDROM",
+      "description": "CD-ROM",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "DVDRM",
+      "description": "DVD-ROM",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "SCORE",
+      "description": "Musical Score",
+      "default": false,
+      "enabled": true,
+      "updated_by": "shudner",
+      "update_date": "2016-11-03Z"
+    },
+    {
+      "code": "VIDEOCASSETTE",
+      "description": "Video cassette",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "AUDIOCASSETTE",
+      "description": "Audio cassette",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "MANUSCRIPT",
+      "description": "Manuscript",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "FILM",
+      "description": "Microfilm",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "FICHE",
+      "description": "Microfiche",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "DISK",
+      "description": "Computer Disk",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "REALIA",
+      "description": "Realia",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "KIT",
+      "description": "Kit",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "PICTURE",
+      "description": "Picture",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "MAP",
+      "description": "Map",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "LRDSC",
+      "description": "Laserdisc",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "RECORD",
+      "description": "Sound Recording",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "ISSBD",
+      "description": "Bound Issue",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "HEAD",
+      "description": "Headphones",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "LPTOP",
+      "description": "Laptop",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "IPAD",
+      "description": "iPad",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "FSADT",
+      "description": "Flat Screen Adaptor",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "CHARG",
+      "description": "Laptop Charger",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "CALC",
+      "description": "Calculator",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "FLIPV",
+      "description": "Flip Video Camera",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "ARTORIG",
+      "description": "Art Original",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "ARTREPRO",
+      "description": "Art Reproduction",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "CHART",
+      "description": "Chart",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "DIORAMA",
+      "description": "Diorama",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "FILMSTRIP",
+      "description": "Filmstrip",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "FLASHCARD",
+      "description": "Flash Card",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "GAME",
+      "description": "Game",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "GRAPHIC",
+      "description": "Graphic",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "MICROSLIDE",
+      "description": "Microscope Slide",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "MODEL",
+      "description": "Model",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "SLIDE",
+      "description": "Slide",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "TECHDRAWING",
+      "description": "Technical Drawing",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "TOY",
+      "description": "Toy",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "TRANSPARENCY",
+      "description": "Transparency",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "LETTER",
+      "description": "Letter",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "PHOTOGRAPH",
+      "description": "Photograph",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "THESIS",
+      "description": "Thesis",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "MIXED",
+      "description": "Mixed material",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "AUDIOBOOK",
+      "description": "Audiobook",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "EQUIP",
+      "description": "Equipment",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "PAMPHLET",
+      "description": "Pamphlet",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "OVERSIZE",
+      "description": "Oversize",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "EPHEMERA",
+      "description": "Ephemera",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "CASE",
+      "description": "Case",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "ROOM",
+      "description": "Room",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "VIDEODISC",
+      "description": "Video Disk",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "SPECIALTHESIS",
+      "description": "Special Degree Thesis",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "PHDTHESIS",
+      "description": "PhD Thesis",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "MASTERTHESIS",
+      "description": "Master Thesis",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "BACHLORTHESIS",
+      "description": "Bachelor Thesis",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    },
+    {
+      "code": "OVERSIZESCORE",
+      "description": "Oversize Score",
+      "default": false,
+      "enabled": true,
+      "updated_by": "system",
+      "update_date": "2014-12-07Z"
+    },
+    {
+      "code": "MICROFORM",
+      "description": "Microform",
+      "default": false,
+      "enabled": true,
+      "updated_by": "system",
+      "update_date": "2014-12-07Z"
+    },
+    {
+      "code": "VRECORD",
+      "description": "Video Recording",
+      "default": false,
+      "enabled": false,
+      "updated_by": "shudner",
+      "update_date": "2021-11-03Z"
+    },
+    {
+      "code": "PLAYAWAY",
+      "description": "Playaway",
+      "default": false,
+      "enabled": true,
+      "updated_by": "system",
+      "update_date": "2014-12-07Z"
+    },
+    {
+      "code": "ARTICLE",
+      "description": "Article",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "ATLAS",
+      "description": "Atlas",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "AUDIORECORDER",
+      "description": "Audio Recorder",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "BLURAY",
+      "description": "Blu-Ray",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "BLURAYDVD",
+      "description": "Blu-Ray And DVD",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "CAMERA",
+      "description": "Camera",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "CAMRECORDER",
+      "description": "Camcorder",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "EREADER",
+      "description": "Ereader",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "GOVRECORD",
+      "description": "Government Document",
+      "default": false,
+      "enabled": false,
+      "updated_by": "shudner",
+      "update_date": "2022-09-26Z"
+    },
+    {
+      "code": "KEYS",
+      "description": "Keys",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "LOOSELEAF",
+      "description": "Looseleaf",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "LP",
+      "description": "LP",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "MICROCARD",
+      "description": "Microcard",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "MOBILEDEVICE",
+      "description": "Mobile Device",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "NEWSPAPER",
+      "description": "Newspaper",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "PROJECTOR",
+      "description": "Projector",
+      "default": false,
+      "enabled": false,
+      "updated_by": "shudner",
+      "update_date": "2022-09-26Z"
+    },
+    {
+      "code": "TABLET",
+      "description": "Tablet",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "VIDEOGAME",
+      "description": "Video Game",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "MMFILM",
+      "description": "16 mm Film",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "BOX",
+      "description": "Box",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "FILMREEL",
+      "description": "Film Reel",
+      "default": false,
+      "enabled": true,
+      "updated_by": "system",
+      "update_date": "2015-06-07Z"
+    },
+    {
+      "code": "FLOPPY_DISK",
+      "description": "Floppy Disk",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2016-11-06Z"
+    },
+    {
+      "code": "ITEM_WITH_AUDIO_CASSETTE",
+      "description": "Item with Audio Cassette",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2016-11-06Z"
+    },
+    {
+      "code": "ITEM_WITH_CD",
+      "description": "Item with CD",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2016-11-06Z"
+    },
+    {
+      "code": "ITEM_WITH_FLOPPY_DISK",
+      "description": "Item with Floppy Disk",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2017-01-08Z"
+    },
+    {
+      "code": "OTHERVM",
+      "description": "Other Visual Material",
+      "default": false,
+      "enabled": true,
+      "updated_by": "System",
+      "update_date": "2015-08-30Z"
+    },
+    {
+      "code": "DAT",
+      "description": "DAT (Digital Audio Tape)",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2016-12-04Z"
+    },
+    {
+      "code": "GLOBE",
+      "description": "Globe",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2016-12-04Z"
+    },
+    {
+      "code": "LAPTOPACCESSORY",
+      "description": "Laptop Accessory",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2016-12-04Z"
+    },
+    {
+      "code": "MICROOPAQUE",
+      "description": "Microopaque",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2016-12-04Z"
+    },
+    {
+      "code": "MOTIONPICTURE",
+      "description": "Motion Picture",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2016-12-04Z"
+    },
+    {
+      "code": "PHONODISC",
+      "description": "Record (Phonodisc)",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2016-12-04Z"
+    },
+    {
+      "code": "VRECORD_OTHER",
+      "description": "Video Recording (Other)",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2016-12-04Z"
+    },
+    {
+      "code": "RARE",
+      "description": "Rare Book",
+      "default": false,
+      "enabled": true,
+      "updated_by": "shudner",
+      "update_date": "2022-08-01Z"
+    },
+    {
+      "code": "MICROFICHE_MASTER",
+      "description": "Microfiche Master",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2017-01-08Z"
+    },
+    {
+      "code": "STANDARD_RECORD",
+      "description": "Standard Record, Shellac Record",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2019-08-04Z"
+    },
+    {
+      "code": "VERTICAL_CUT_DISC",
+      "description": "Vertical-Cut Disc, Pathé Record",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2019-08-04Z"
+    },
+    {
+      "code": "CARDBOARD_RECORD",
+      "description": "Cardboard Record, Flexi Disc",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2019-08-04Z"
+    },
+    {
+      "code": "MAGNETIC_TAPE",
+      "description": "Magnetic Tape",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2019-08-04Z"
+    },
+    {
+      "code": "PIANO_ROLL",
+      "description": "Piano Roll",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2019-08-04Z"
+    },
+    {
+      "code": "ARCHIVAL_MATERIAL",
+      "description": "Archival Material",
+      "default": false,
+      "enabled": true,
+      "updated_by": "shudner",
+      "update_date": "2022-08-01Z"
+    },
+    {
+      "code": "PHONOGRAPH_CYLINDER",
+      "description": "Phonograph Cylinder",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2019-08-04Z"
+    },
+    {
+      "code": "BROADSIDE",
+      "description": "Broadside",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2020-03-01Z"
+    },
+    {
+      "code": "POSTER",
+      "description": "Poster",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2020-03-01Z"
+    },
+    {
+      "code": "AUDIOVM",
+      "description": "Audio visual media",
+      "default": false,
+      "enabled": true,
+      "updated_by": "Ex Libris",
+      "update_date": "2020-07-05Z"
+    },
+    {
+      "code": "HATHIMATERIAL",
+      "description": "HathiTrust Material",
+      "default": false,
+      "enabled": true,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "MUSICINSTRUMENT",
+      "description": "Musical Instrument",
+      "default": false,
+      "enabled": true,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "LOCKER",
+      "description": "Locker",
+      "default": false,
+      "enabled": true,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "MICROPHONE",
+      "description": "Microphone",
+      "default": false,
+      "enabled": true,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "FASCICULE",
+      "description": "Fascicule",
+      "default": false,
+      "enabled": true,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "ADDITIONAL1",
+      "description": "Marker Pack",
+      "default": false,
+      "enabled": true,
+      "updated_by": "e.beach",
+      "update_date": "2025-01-30Z"
+    },
+    {
+      "code": "ADDITIONAL2",
+      "description": "Additional2",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "ADDITIONAL3",
+      "description": "Additional3",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "ADDITIONAL4",
+      "description": "Additional4",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "ADDITIONAL5",
+      "description": "Additional5",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "ADDITIONAL6",
+      "description": "Additional6",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "ADDITIONAL7",
+      "description": "Additional7",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "ADDITIONAL8",
+      "description": "Additional8",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "ADDITIONAL9",
+      "description": "Additional9",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "ADDITIONAL10",
+      "description": "Additional10",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "ADDITIONAL11",
+      "description": "Additional11",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "ADDITIONAL12",
+      "description": "Additional12",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "ADDITIONAL13",
+      "description": "Additional13",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "ADDITIONAL14",
+      "description": "Additional14",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "ADDITIONAL15",
+      "description": "Additional15",
+      "default": false,
+      "enabled": false,
+      "updated_by": "System",
+      "update_date": "2023-05-07Z"
+    },
+    {
+      "code": "OTHER",
+      "description": "Other",
+      "default": false,
+      "enabled": true,
+      "updated_by": "RBates",
+      "update_date": "2014-05-22Z"
+    }
+  ]
+}

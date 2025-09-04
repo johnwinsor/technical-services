@@ -1,0 +1,307 @@
+{
+  "name": "PurchaseType",
+  "description": "Purchase Type",
+  "sub_system": {
+    "value": "ACQUISITION",
+    "desc": "Acquisition"
+  },
+  "patron_facing": true,
+  "language": {
+    "value": "en",
+    "desc": "English"
+  },
+  "scope": {
+    "institution_id": {
+      "value": "01NEU_INST",
+      "desc": "Northeastern University"
+    },
+    "library_id": {
+      "value": "",
+      "desc": ""
+    }
+  },
+  "row": [
+    {
+      "code": "ACCESS_SERVICE_CO",
+      "description": "Access Service - Subscription",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "ARTICLE_PROCESSING_CHARGES_CO",
+      "description": "Article Processing Charges (APC) - Subscription",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "ARTICLE_PROCESSING_CHARGES_OT",
+      "description": "Article Processing Charges (APC) - One Time",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "DB_CO",
+      "description": "Database - Subscription (removed)",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "DB_OT",
+      "description": "Database - One Time (removed)",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "DB_SERVICE_OT",
+      "description": "Database Service - One Time ",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "DIGITAL_CO",
+      "description": "Digital - Subscription",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "DIGITAL_NONARCHIVING",
+      "description": "Digital - Non Archiving",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "DIGITAL_OT",
+      "description": "Digital - One Time",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "DUMMY",
+      "description": " ",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "ELECTRONIC_COLLECTION_CO",
+      "description": "Electronic Collection - Subscription",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "ELECTRONIC_COLLECTION_OT",
+      "description": "Electronic Collection - One Time",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "ELECTRONIC_SO",
+      "description": "Electronic Title - Standing Order",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "ELECTRONIC_TITLE_CO",
+      "description": "Electronic Title - Subscription",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "ELECTRONIC_TITLE_OT",
+      "description": "Electronic Title - One Time",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "E_BOOK_CO",
+      "description": "Electronic Book - Subscription",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "E_BOOK_OT",
+      "description": "Electronic Book - One Time",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "E_BOOK_PKG_CO",
+      "description": "Electronic Book Package - Subscription (removed)",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "E_BOOK_PKG_OT",
+      "description": "Electronic Book Package - One Time (removed)",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "E_BOOK_SO",
+      "description": "Electronic Book - Standing Order",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "E_JOURNAL_CO",
+      "description": "Electronic Journal - Subscription",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "E_JOURNAL_OT",
+      "description": "Electronic Journal - One Time",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "E_JOURNAL_PKG_CO",
+      "description": "Electronic Journal Package - Subscription (removed)",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "E_JOURNAL_PKG_OT",
+      "description": "Electronic Journal Package - One Time (removed)",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "LICENSE_UPGRADE",
+      "description": "License Upgrade",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "MANUSCRIPT",
+      "description": "Manuscript",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "MAP_OT",
+      "description": "Map",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "MICROFORM",
+      "description": "Microform",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "MIXED",
+      "description": "Mixed Material",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "OTHER_SERVICES_CO",
+      "description": "Other Service - Subscription",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "OTHER_SERVICES_OT",
+      "description": "Other Service - One Time",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "PHYSICAL_ARCHIVING",
+      "description": "Physical - Archiving",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "PHYSICAL_CF_CO",
+      "description": "Physical Computer File - Subscription",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "PHYSICAL_CF_OT",
+      "description": "Physical Computer File - One Time",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "PRINTED_BOOK_OT",
+      "description": "Print Book - One Time",
+      "default": true,
+      "enabled": true
+    },
+    {
+      "code": "PRINTED_BOOK_SO",
+      "description": "Print Book - Standing Order",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "PRINTED_JOURNAL_CO",
+      "description": "Print Journal - Subscription",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "PRINTED_JOURNAL_OT",
+      "description": "Print Journal - One Time",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "PRINT_CO",
+      "description": "Physical - Subscription",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "PRINT_OT",
+      "description": "Physical - One Time",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "PRINT_SO",
+      "description": "Physical - Standing Order Monograph",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "PRINT_SO_NONMON",
+      "description": "Physical - Standing Order Non Monograph",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "RECORD_OT",
+      "description": "Sound Recording",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "REMOTE_CF_CO",
+      "description": "Remote Computer File - Subscription",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "REMOTE_CF_OT",
+      "description": "Remote Computer File - One Time",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "SCORE_OT",
+      "description": "Musical Score",
+      "default": false,
+      "enabled": true
+    },
+    {
+      "code": "VISUAL_MTL_OT",
+      "description": "Visual Material",
+      "default": false,
+      "enabled": true
+    }
+  ]
+}

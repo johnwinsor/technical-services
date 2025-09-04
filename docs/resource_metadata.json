@@ -1,0 +1,82 @@
+"resource_metadata": {
+    "description": "Metadata related information. If a matching bibliographic record is found - the PO line will be related to it. If not - a new bibliographic record will be created. See [here](https://developers.exlibrisgroup.com/blog/Create-PO-line-API-how-the-bibliographic-record-is-determined) for more details regarding the matching process.",
+    "type": "object",
+    "xml": {
+      "name": "resource_metadata"
+    },
+    "properties": {
+      "mms_id": {
+        "type": "object",
+        "description": "The mms_id. Cannot be updated by the PUT action. If supplied in the POST action, match will be done based on it.",
+        "properties": {
+          "value": {
+            "type": "string",
+            "example": "9932941300561",
+            "xml": {
+              "name": "xml_value"
+            }
+          }
+        }
+      },
+      "title": {
+        "type": "string",
+        "example": "World without end / Ken Follett.",
+        "description": "The title. Mandatory in the POST action if mms_id was not supplied."
+      },
+      "author": {
+        "type": "string",
+        "example": "Follett, Ken.",
+        "description": "Author - taken from inventory field 250 $b."
+      },
+      "issn": {
+        "type": "string",
+        "example": "",
+        "description": "issn"
+      },
+      "isbn": {
+        "type": "string",
+        "example": "2007026639",
+        "description": "isbn"
+      },
+      "publisher": {
+        "type": "string",
+        "example": "Dutton,",
+        "description": "The Publisher of the item."
+      },
+      "publication_place": {
+        "type": "string",
+        "example": "New York :",
+        "description": "The publication place of the item."
+      },
+      "publication_year": {
+        "type": "string",
+        "example": "c2007.",
+        "description": "The publication year of the item."
+      },
+      "vendor_title_number": {
+        "type": "string",
+        "example": "",
+        "description": "The value given by the vendor to the title."
+      },
+      "title_id": {
+        "type": "string",
+        "example": "12345",
+        "description": "Relevant only for electronic orders from OASIS for portfolios which are part of Ebook Central Perpetual and DDA Titles collection. This field will be used in order to find and activate the relevant portfolio from the CZ."
+      },
+      "system_control_number": {
+        "description": "List of system control numbers, corresponding to the MARC 035 field.",
+        "type": "array",
+        "xml": {
+          "wrapped": true,
+          "name": "system_control_numbers"
+        },
+        "items": {
+          "type": "string",
+          "example": "",
+          "xml": {
+            "name": "system_control_number"
+          }
+        }
+      }
+    }
+  }

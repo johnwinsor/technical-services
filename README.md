@@ -64,4 +64,13 @@ technical-services/
 
 ## Running Scripts
 
-1. 
+1. Amazon Orders
+2. Generic Vendors (credit card orders)
+   - Place order at vendor Website and print order summary or confimation.
+   - Look up titles in OCLC WorldCat (https://search.worldcat.org/). Note OCLC numbers on order summary
+   - Create new vendor in Alma if necessary
+   - Create new working folder for order in other_orders/
+     - Name after the vendor and append the date (hacky-labs_20250820)
+   - `uv run create-pols`
+3. JLG Shipments
+4. EBSCO Renewals
