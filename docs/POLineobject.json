@@ -1,0 +1,147 @@
+{
+  "link": "",
+  "owner": {
+    "value": "MAIN"
+  },
+  "type": {
+    "value": "PRINTED_BOOK_OT"
+  },
+  "vendor": {
+    "value": "MVEN"
+  },
+  "vendor_account": "MVEN",
+  "reclaim_interval": "1",
+  "expected_receipt_interval": "1",
+  "claiming_interval": "1",
+  "expected_activation_interval": "1",
+  "subscription_interval": "1",
+  "expected_activation_date": "2015-05-02Z",
+  "e_activation_due_interval": "1",
+  "acquisition_method": {
+    "value": "VENDOR_SYSTEM"
+  },
+  "no_charge": "false",
+  "rush": "false",
+  "cancellation_restriction": "false",
+  "cancellation_restriction_note": "",
+  "price": {
+    "sum": "150.0",
+    "currency": {
+      "value": "USD"
+    }
+  },
+  "discount": "20",
+  "vendor_reference_number": "125",
+  "vendor_reference_number_type": {
+    "value": "SCO"
+  },
+  "source_type": {
+    "value": "SELECTIONITEM"
+  },
+  "po_number": "PO-254153",
+  "additional_order_reference": "Order 1234",
+  "invoice_reference": "",
+  "resource_metadata": {
+    "mms_id": {
+      "value": "9932941300561"
+    },
+    "title": "World without end / Ken Follett.",
+    "author": "Follett, Ken.",
+    "issn": "",
+    "isbn": "2007026639",
+    "publisher": "Dutton,",
+    "publication_place": "New York :",
+    "publication_year": "c2007.",
+    "vendor_title_number": "",
+    "title_id": "12345",
+    "system_control_number": [
+      ""
+    ]
+  },
+  "fund_distribution": [
+    {
+      "fund_code": {
+        "value": "00LIS"
+      },
+      "amount": {
+        "sum": "150.0",
+        "currency": {
+          "value": "USD"
+        }
+      }
+    }
+  ],
+  "reporting_code": "b",
+  "secondary_reporting_code": "sso",
+  "tertiary_reporting_code": "u",
+  "fourth_reporting_code": "u",
+  "fifth_reporting_code": "u",
+  "vendor_note": "",
+  "receiving_note": "",
+  "note": [
+    {
+      "note_text": "Created by: John Smith"
+    }
+  ],
+  "location": [
+    {
+      "quantity": "1",
+      "library": {
+        "value": "LAW"
+      },
+      "shelving_location": "main",
+      "copy": [
+        {
+          "link": "",
+          "barcode": "2379499752",
+          "item_policy": {
+            "value": "09"
+          },
+          "receive_date": "2012-12-12Z",
+          "enumeration_a": "",
+          "enumeration_b": "",
+          "enumeration_c": "",
+          "chronology_i": "",
+          "chronology_j": "",
+          "chronology_k": "",
+          "description": "desc",
+          "storage_location_id": "12339700001021",
+          "is_temp_location": "false",
+          "permanent_library": {
+            "value": ""
+          },
+          "permanent_shelving_location": ""
+        }
+      ]
+    }
+  ],
+  "interested_user": [
+    {
+      "primary_id": "",
+      "notify_receiving_activation": "false",
+      "hold_item": "false",
+      "notify_renewal": "false",
+      "notify_cancel": "false"
+    }
+  ],
+  "license": {
+    "value": ""
+  },
+  "access_model": "unlimited",
+  "url": "",
+  "base_status": "ACTIVE",
+  "access_provider": "",
+  "manual_renewal": "false",
+  "renewal_cycle": {
+    "value": "1"
+  },
+  "subscription_from_date": "2015-05-02Z",
+  "subscription_to_date": "2018-05-02Z",
+  "renewal_date": "2018-05-03Z",
+  "renewal_period": "100",
+  "renewal_note": "",
+  "material_type": {
+    "value": "BOOK"
+  },
+  "expected_receipt_date": "2015-08-01Z"
+}

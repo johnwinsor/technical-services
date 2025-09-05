@@ -59,7 +59,7 @@ class POLineData:
     csv_receiving_note: str = ""
     
     # User-added metadata
-    subject: str = "General"
+    subject: str = ""
     receiving_note_categories: List[str] = None
     additional_note: str = ""
     reserve_note: str = ""
@@ -289,7 +289,7 @@ def get_user_metadata(data: POLineData, alma_config: Optional[AlmaConfig]) -> PO
     data.subject = questionary.autocomplete(
         "Subject:",
         choices=SUBJECTS,
-        default="General",
+        default="",
         validate=lambda text: text in SUBJECTS or "Please select a valid subject"
     ).ask()
     

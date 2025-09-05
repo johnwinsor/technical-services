@@ -1,4 +1,4 @@
-"resource_metadata": {
+{"resource_metadata": {
     "description": "Metadata related information. If a matching bibliographic record is found - the PO line will be related to it. If not - a new bibliographic record will be created. See [here](https://developers.exlibrisgroup.com/blog/Create-PO-line-API-how-the-bibliographic-record-is-determined) for more details regarding the matching process.",
     "type": "object",
     "xml": {
@@ -80,3 +80,4 @@
       }
     }
   }
+}
