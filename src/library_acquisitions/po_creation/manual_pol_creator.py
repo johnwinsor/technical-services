@@ -67,6 +67,13 @@ def get_order_information(config: AlmaConfig):
     console.print(Panel.fit("Order Information", style="bold blue"))
     
     # Basic order info
+    
+    # Material type
+    acquisition_method = questionary.select(
+        "Acquisition Method:",
+        choices=["VENDOR_SYSTEM", "TECHNICAL"]
+    ).ask()
+    
     vendor_code = questionary.text(
         "Vendor code:",
         validate=lambda text: len(text.strip()) > 0 or "Vendor code is required"
@@ -97,7 +104,7 @@ def get_order_information(config: AlmaConfig):
     # Material type
     material_type = questionary.select(
         "Material type:",
-        choices=["BOOK", "DVD", "JOURNAL", "OTHER"]
+        choices=["BOOK", "RARE", "DVD", "JOURNAL", "OTHER"]
     ).ask()
     
     # OCLC search option
@@ -163,14 +170,26 @@ def get_order_information(config: AlmaConfig):
     ).ask()
     
     # Additional order reference
-    additional_order_ref = questionary.select(
+    additional_order_ref_initial = questionary.select(
         "Additional order reference:",
         choices=[
             questionary.Choice("None", ""),
             questionary.Choice("pcard purchase", "pcard purchase"),
-            questionary.Choice("punchout purchase", "punchout purchase")
+            questionary.Choice("punchout purchase", "punchout purchase"),
+            questionary.Separator(), # Adds a visual separator
+            questionary.Choice("Other (please specify)", "other")
         ]
     ).ask()
+    
+    # An empty response can happen if the user hits Ctrl+C
+    if additional_order_ref_initial is None:
+        additional_order_ref = ""
+    # Step 2: If 'Other' was chosen, ask for custom text input
+    elif additional_order_ref_initial == "other":
+        additional_order_ref = questionary.text("Please specify the reference:").ask()
+    # Otherwise, use the choice they selected
+    else:
+        additional_order_ref = additional_order_ref_initial
     
     # Fund
     fund_code = questionary.text(
@@ -209,6 +228,7 @@ def get_order_information(config: AlmaConfig):
         conditional_data['reserve_note'] = reserve_note or ''
     
     return {
+        'acquisition_method': acquisition_method,
         'vendor_code': vendor_code,
         'vendor_account': vendor_account,
         'vendor_reference_number': vendor_ref,
@@ -300,6 +320,12 @@ def create_po_json(data):
         "VISUAL_MTL_OT": "Visual Material"
     }
     
+    # Map acquisition method codes to descriptions
+    acquisition_method_descriptions = {
+        "VENDOR_SYSTEM": "Purchase at Vendor System",
+        "TECHNICAL": "Technical"
+    }
+    
     po_line = {
         "owner": {"value": "OLIN", "desc": "F.W. Olin Library"},
         "type": {
@@ -308,6 +334,10 @@ def create_po_json(data):
         },
         "vendor": {"value": data['vendor_code']},
         "vendor_account": data['vendor_account'],
+        "acquisition_method": {
+            "value": data['acquisition_method'],
+            "desc": acquisition_method_descriptions.get(data['acquisition_method'], data['acquisition_method'])
+        },
         "acquisition_method": {"value": "VENDOR_SYSTEM", "desc": "Purchase at Vendor System"},
         "no_charge": False,
         "rush": False,
@@ -431,6 +461,7 @@ def display_summary(data, filename):
     table.add_row("Author", data['author'] or "Not specified")
     table.add_row("Price", f"${data['price']}")
     table.add_row("Vendor", data['vendor_code'])
+    table.add_row("Acquisition Method", data['acquisition_method'])
     table.add_row("Quantity", str(data['quantity']))
     table.add_row("Fund", data['fund_code'])
     table.add_row("Subject", data['reporting_code'])
