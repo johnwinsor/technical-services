@@ -1,0 +1,91 @@
+{
+    "owner": {
+        "value": "OLIN",
+        "desc": "F.W. Olin Library"
+    },
+    "type": {
+        "value": "PRINTED_BOOK_OT",
+        "desc": "Print Book - One Time"
+    },
+    "vendor": {
+        "value": "amazon"
+    },
+    "vendor_account": "amazon",
+    "acquisition_method": {
+        "value": "VENDOR_SYSTEM",
+        "desc": "Purchase at Vendor System"
+    },
+    "material_type": {
+        "value": "BOOK"
+    },
+    "additional_order_reference": "punchout purchase",
+    "no_charge": "false",
+    "rush": "false",
+    "cancellation_restriction": "false",
+    "price": {
+        "sum": "28.42",
+        "currency": {
+            "value": "USD"
+        }
+    },
+    "vendor_reference_number": "113-6107919-8746650",
+    "vendor_reference_number_type": {
+        "value": "IA"
+    },
+    "source_type": {
+        "value": "API"
+    },
+    "resource_metadata": {
+        "title": "Public Enemy #2: An All-new Boondocks Collection",
+        "author": "Three Rivers Press",
+        "isbn": "1400082587",
+        "vendor_title_number": "1400082587"
+    },
+    "fund_distribution": [
+        {
+            "amount": {
+                "sum": "28.42",
+                "currency": {
+                    "value": "USD",
+                    "desc": "US Dollar"
+                }
+            },
+            "fund_code": {
+                "value": "rnlds",
+                "desc": "Flora Elizabeth Reynolds Book Fund"
+            }
+        }
+    ],
+    "reporting_code": "Graphic Novels",
+    "vendor_note": "Amazon Order ID: 113-6107919-8746650",
+    "receiving_note": "Replacement",
+    "location": [
+        {
+            "quantity": "1",
+            "library": {
+                "value": "OLIN"
+            },
+            "shelving_location": "olord",
+            "copy": [
+                {
+                    "item_policy": {
+                        "value": "40"
+                    },
+                    "is_temp_location": "false",
+                    "permanent_library": {
+                        "value": ""
+                    },
+                    "permanent_shelving_location": ""
+                }
+            ]
+        }
+    ],
+    "note": [
+        {
+            "note_text": "ASIN: 1400082587"
+        },
+        {
+            "note_text": "Account Group: Jaggaer Punchout Group Prod"
+        }
+    ]
+}

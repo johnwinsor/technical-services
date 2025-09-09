@@ -179,7 +179,7 @@ def parse_csv_row(row: Dict[str, Any]) -> Optional[POLineData]:
         account_group=str(row.get('Account Group', '')).strip(),
         po_number=str(row.get('PO Number', '')).strip(),
         order_date=str(row.get('Order Date', '')).strip(),
-        csv_receiving_note=str(row.get('Receiving note', '')).strip()
+        csv_receiving_note=str(row.get('Receiving Note', '')).strip()
     )
 
 def create_po_line_json(data: POLineData) -> Dict[str, Any]:
