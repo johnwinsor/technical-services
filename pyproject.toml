@@ -28,6 +28,7 @@ packages = ["src/library_acquisitions", "src/collection_management"]
 [project.scripts]
 create-pols = "library_acquisitions.po_creation.manual_pol_creator:main"
 amazon-csv-to-json = "library_acquisitions.po_creation.amazon_pol_creator:main"
+workday-csv-to-json = "library_acquisitions.po_creation.workday_pol_creator:main"
 alma-check-holdings = "collection_management.alma_holdings_checker:main"
 edi-parser = "library_acquisitions.invoice_processing.edi_parser:main"
 invoice-report = "library_acquisitions.invoice_processing.invoice_report:main"
