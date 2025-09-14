@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<payment_data xmlns="http://com/exlibris/repository/acq/invoice/xmlbeans">
+  <invoice_list>
+    <invoice>
+      <invoice_number>491151</invoice_number>
+      <invoice_ref_num>2</invoice_ref_num>
+      <invoice_owner>F.W. Olin Library</invoice_owner>
+      <approved_by>JWinsor</approved_by>
+      <invoice_amount>
+        <currency>USD</currency>
+        <sum>12.23</sum>
+      </invoice_amount>
+      <vendor_code>gobi-mills</vendor_code>
+      <vendor_name>GOBI - Library Solutions From EBSCO</vendor_name>
+      <vendor_FinancialSys_Code>Z00011140</vendor_FinancialSys_Code>
+      <vendor_liable_for_vat>false</vendor_liable_for_vat>
+      <vendor_payment_address_list>
+        <payment_address preferred="true">
+          <line1>GOBI Library Solutions from EBSCO</line1>
+          <line2>PO Box 277991</line2>
+          <city>Atlanta</city>
+          <country>USA</country>
+          <postalCode>30384-7991</postalCode>
+          <stateProvince>Georgia</stateProvince>
+          <types>
+            <type>Payment</type>
+          </types>
+        </payment_address>
+      </vendor_payment_address_list>
+      <vendor_account_code>gobi-mills</vendor_account_code>
+      <unique_identifier>20674062540001401</unique_identifier>
+      <invoice_date>08/29/2025</invoice_date>
+      <invoice_due_date>12/31/1969</invoice_due_date>
+      <payment_method>ACCOUNTINGDEPARTMENT</payment_method>
+      <prepaid_ind>false</prepaid_ind>
+      <number_of_attachments>2</number_of_attachments>
+      <noteList>
+        <note>
+          <content>Invoice includes Shipping Charge of $1.00 and Sales Tax Charge of $1.04</content>
+          <owneredEntity>
+            <createdBy>JWinsor</createdBy>
+            <creationDate>20250910</creationDate>
+            <customerId>1390</customerId>
+            <institutionId>1401</institutionId>
+            <libraryId>15450626130001401</libraryId>
+            <modificationDate>20250910</modificationDate>
+            <modifiedBy>JWinsor</modifiedBy>
+          </owneredEntity>
+        </note>
+        <note>
+          <content>Invoice Includes Delivery charge  Charge  2.04</content>
+          <owneredEntity>
+            <createdBy>System</createdBy>
+            <creationDate>20250910</creationDate>
+            <customerId>1390</customerId>
+            <institutionId>1401</institutionId>
+            <modificationDate>20250910</modificationDate>
+            <modifiedBy>System</modifiedBy>
+          </owneredEntity>
+        </note>
+      </noteList>
+      <invoice_ownered_entity>
+        <createdBy>Northeastern University</createdBy>
+        <creationDate>20250910</creationDate>
+        <customerId>1390</customerId>
+        <institutionId>1401</institutionId>
+        <libraryId>15450626130001401</libraryId>
+        <modificationDate>20250910</modificationDate>
+        <modifiedBy>JWinsor</modifiedBy>
+      </invoice_ownered_entity>
+      <vat_info>
+        <expended_from_fund_ind>true</expended_from_fund_ind>
+        <inclusive_ind>true</inclusive_ind>
+        <vat_amount>0.0</vat_amount>
+        <vat_percentage>0.0</vat_percentage>
+        <vat_type>LINEEXCLUSIVE</vat_type>
+        <vat_in_invoice_line_level>false</vat_in_invoice_line_level>
+      </vat_info>
+      <additional_charges>
+        <discount_amount>0.0</discount_amount>
+        <insurance_amount>0.0</insurance_amount>
+        <overhead_amount>0.0</overhead_amount>
+        <shipment_amount>2.04</shipment_amount>
+        <total_charges_amount>2.04</total_charges_amount>
+      </additional_charges>
+      <invoice_line_list>
+        <invoice_line>
+          <line_number>1</line_number>
+          <line_type>REGULAR</line_type>
+          <note>Unit price : 11.99   
+ Unit price : 10.19</note>
+          <quantity>1</quantity>
+          <reporting_code>Graphic Novels</reporting_code>
+          <total_price>12.23</total_price>
+          <price>10.19</price>
+          <po_line_info>
+            <fully_Invoiced_ind>true</fully_Invoiced_ind>
+            <po_line_owner>F.W. Olin Library</po_line_owner>
+            <mms_record_id>9952697818801401</mms_record_id>
+            <meta_data_values>
+              <acqterms_identifier>9781974725762</acqterms_identifier>
+              <acqterms_identifierType>ISBN</acqterms_identifierType>
+              <acqterms_place>SAN FRANCISCO</acqterms_place>
+              <creator>YAMADA, KANEHITO</creator>
+              <date>2021</date>
+              <publisher>VIZ MEDIA</publisher>
+            </meta_data_values>
+            <po_number>PO-3412738</po_number>
+            <vendor_reference_number>90102254941</vendor_reference_number>
+            <intersted_user_list>
+              <intersted_user>
+                <email>cl.lopez@northeastern.edu</email>
+                <first_name>Claudia</first_name>
+                <id>17753836670001401</id>
+                <last_name>Lopez</last_name>
+                <user_name>002444460</user_name>
+              </intersted_user>
+            </intersted_user_list>
+            <po_line_number>POL-151687</po_line_number>
+            <po_line_price>11.99</po_line_price>
+            <po_line_title>FRIEREN BEYOND JOURNEY'S END; V. 1.</po_line_title>
+          </po_line_info>
+          <fund_info_list>
+            <fund_info>
+              <amount>
+                <currency>USD</currency>
+                <sum>12.23</sum>
+              </amount>
+              <local_amount>
+                <currency>USD</currency>
+                <sum>12.23</sum>
+              </local_amount>
+              <code>kent</code>
+              <name>Kent Fund</name>
+              <fiscal_period>FY-2026</fiscal_period>
+              <external_id>GF1673-SC090</external_id>
+              <type>ALLOCATED</type>
+              <fund_type>General</fund_type>
+              <fund_type_desc>General</fund_type_desc>
+              <ledger_code>OLIN RESTRICTED</ledger_code>
+              <ledger_name>F.W. OLIN LIBRARY RESTRICTED ACCOUNT</ledger_name>
+            </fund_info>
+          </fund_info_list>
+        </invoice_line>
+      </invoice_line_list>
+    </invoice>
+  </invoice_list>

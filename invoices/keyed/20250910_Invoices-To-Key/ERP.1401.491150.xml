@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+       <head>
+    <meta charset="UTF-8">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+        <body >
+<iframe srcdoc='<?xml version="1.0" encoding="UTF-8"?>
+<payment_data xmlns="http://com/exlibris/repository/acq/invoice/xmlbeans">
+  <invoice_list>
+    <invoice>
+      <invoice_number>491150</invoice_number>
+      <invoice_ref_num>1</invoice_ref_num>
+      <invoice_owner>F.W. Olin Library</invoice_owner>
+      <approved_by>JWinsor</approved_by>
+      <invoice_amount>
+        <currency>USD</currency>
+        <sum>97.1</sum>
+      </invoice_amount>
+      <vendor_code>gobi-mills</vendor_code>
+      <vendor_name>GOBI - Library Solutions From EBSCO</vendor_name>
+      <vendor_FinancialSys_Code>Z00011140</vendor_FinancialSys_Code>
+      <vendor_liable_for_vat>false</vendor_liable_for_vat>
+      <vendor_payment_address_list>
+        <payment_address preferred="true">
+          <line1>GOBI Library Solutions from EBSCO</line1>
+          <line2>PO Box 277991</line2>
+          <city>Atlanta</city>
+          <country>USA</country>
+          <postalCode>30384-7991</postalCode>
+          <stateProvince>Georgia</stateProvince>
+          <types>
+            <type>Payment</type>
+          </types>
+        </payment_address>
+      </vendor_payment_address_list>
+      <vendor_account_code>gobi-mills</vendor_account_code>
+      <unique_identifier>20674061340001401</unique_identifier>
+      <invoice_date>08/29/2025</invoice_date>
+      <invoice_due_date>12/31/1969</invoice_due_date>
+      <payment_method>ACCOUNTINGDEPARTMENT</payment_method>
+      <prepaid_ind>false</prepaid_ind>
+      <number_of_attachments>2</number_of_attachments>
+      <noteList>
+        <note>
+          <content>Invoice includes Shipping Charge of $2.22 and Sales Tax Charge of $8.82</content>
+          <owneredEntity>
+            <createdBy>JWinsor</createdBy>
+            <creationDate>20250910</creationDate>
+            <customerId>1390</customerId>
+            <institutionId>1401</institutionId>
+            <libraryId>15450626130001401</libraryId>
+            <modificationDate>20250910</modificationDate>
+            <modifiedBy>JWinsor</modifiedBy>
+          </owneredEntity>
+        </note>
+        <note>
+          <content>During EDI process the poline could not be fetched and linked to Invoice Line #4 according to the following data. Please link poline manually: Poline reference number: Vendor reference number:0 Title:.</content>
+          <owneredEntity>
+            <createdBy>System</createdBy>
+            <creationDate>20250910</creationDate>
+            <customerId>1390</customerId>
+            <institutionId>1401</institutionId>
+            <modificationDate>20250910</modificationDate>
+            <modifiedBy>System</modifiedBy>
+          </owneredEntity>
+        </note>
+        <note>
+          <content>Invoice Includes Sleeving  Charge  5.31</content>
+          <owneredEntity>
+            <createdBy>System</createdBy>
+            <creationDate>20250910</creationDate>
+            <customerId>1390</customerId>
+            <institutionId>1401</institutionId>
+            <modificationDate>20250910</modificationDate>
+            <modifiedBy>System</modifiedBy>
+          </owneredEntity>
+        </note>
+        <note>
+          <content>Invoice Includes Delivery charge  Charge  11.04</content>
+          <owneredEntity>
+            <createdBy>System</createdBy>
+            <creationDate>20250910</creationDate>
+            <customerId>1390</customerId>
+            <institutionId>1401</institutionId>
+            <modificationDate>20250910</modificationDate>
+            <modifiedBy>System</modifiedBy>
+          </owneredEntity>
+        </note>
+      </noteList>
+      <invoice_ownered_entity>
+        <createdBy>Northeastern University</createdBy>
+        <creationDate>20250910</creationDate>
+        <customerId>1390</customerId>
+        <institutionId>1401</institutionId>
+        <libraryId>15450626130001401</libraryId>
+        <modificationDate>20250910</modificationDate>
+        <modifiedBy>JWinsor</modifiedBy>
+      </invoice_ownered_entity>
+      <vat_info>
+        <expended_from_fund_ind>true</expended_from_fund_ind>
+        <inclusive_ind>true</inclusive_ind>
+        <vat_amount>0.0</vat_amount>
+        <vat_percentage>0.0</vat_percentage>
+        <vat_type>LINEEXCLUSIVE</vat_type>
+        <vat_in_invoice_line_level>false</vat_in_invoice_line_level>
+      </vat_info>
+      <additional_charges>
+        <discount_amount>0.0</discount_amount>
+        <insurance_amount>0.0</insurance_amount>
+        <overhead_amount>0.0</overhead_amount>
+        <shipment_amount>16.35</shipment_amount>
+        <total_charges_amount>16.35</total_charges_amount>
+      </additional_charges>
+      <invoice_line_list>
+        <invoice_line>
+          <line_number>1</line_number>
+          <line_type>REGULAR</line_type>
+          <note>Unit price : 35.0   
+ Unit price : 29.75</note>
+          <quantity>1</quantity>
+          <reporting_code>History</reporting_code>
+          <total_price>35.77</total_price>
+          <price>29.75</price>
+          <po_line_info>
+            <fully_Invoiced_ind>true</fully_Invoiced_ind>
+            <po_line_owner>F.W. Olin Library</po_line_owner>
+            <mms_record_id>9952680518901401</mms_record_id>
+            <meta_data_values>
+              <acqterms_identifier>9780385549912</acqterms_identifier>
+              <acqterms_identifierType>ISBN</acqterms_identifierType>
+              <acqterms_place>NEW YORK</acqterms_place>
+              <creator>GOFFE, TAO LEIGH</creator>
+              <date>2025</date>
+              <publisher>DOUBLEDAY</publisher>
+            </meta_data_values>
+            <po_number>PO-3378738</po_number>
+            <vendor_reference_number>90102141182</vendor_reference_number>
+            <po_line_number>POL-151230</po_line_number>
+            <po_line_price>35.0</po_line_price>
+            <po_line_title>DARK LABORATORY: ON COLUMBUS, THE CARIBBEAN, AND THE ORIGINS OF THE CLIMATE CRISIS.</po_line_title>
+          </po_line_info>
+          <fund_info_list>
+            <fund_info>
+              <amount>
+                <currency>USD</currency>
+                <sum>35.77</sum>
+              </amount>
+              <local_amount>
+                <currency>USD</currency>
+                <sum>35.77</sum>
+              </local_amount>
+              <code>rnlds</code>
+              <name>Flora Elizabeth Reynolds Book Fund</name>
+              <fiscal_period>FY-2026</fiscal_period>
+              <external_id>GF1682-SC090</external_id>
+              <type>ALLOCATED</type>
+              <fund_type>General</fund_type>
+              <fund_type_desc>General</fund_type_desc>
+              <ledger_code>OLIN RESTRICTED</ledger_code>
+              <ledger_name>F.W. OLIN LIBRARY RESTRICTED ACCOUNT</ledger_name>
+            </fund_info>
+          </fund_info_list>
+        </invoice_line>
+        <invoice_line>
+          <line_number>2</line_number>
+          <line_type>REGULAR</line_type>
+          <note>Unit price : 32.0   
+ Unit price : 27.2</note>
+          <quantity>1</quantity>
+          <reporting_code>Computer Science</reporting_code>
+          <total_price>32.71</total_price>
+          <price>27.2</price>
+          <po_line_info>
+            <fully_Invoiced_ind>true</fully_Invoiced_ind>
+            <po_line_owner>F.W. Olin Library</po_line_owner>
+            <mms_record_id>9952680517701401</mms_record_id>
+            <meta_data_values>
+              <acqterms_identifier>9780593657508</acqterms_identifier>
+              <acqterms_identifierType>ISBN</acqterms_identifierType>
+              <acqterms_place>NEW YORK</acqterms_place>
+              <creator>HAO, KAREN</creator>
+              <date>2025</date>
+              <publisher>PENGUIN RANDOM HOUSE</publisher>
+            </meta_data_values>
+            <po_number>PO-3396740</po_number>
+            <vendor_reference_number>90102210860</vendor_reference_number>
+            <intersted_user_list>
+              <intersted_user>
+                <email>j.dashe@northeastern.edu</email>
+                <first_name>Julia</first_name>
+                <id>15322490940001401</id>
+                <last_name>Dashe</last_name>
+                <user_name>002630350</user_name>
+              </intersted_user>
+            </intersted_user_list>
+            <po_line_number>POL-151482</po_line_number>
+            <po_line_price>32.0</po_line_price>
+            <po_line_title>EMPIRE OF AI: DREAMS AND NIGHTMARES IN SAM ALTMAN'S OPENAI.</po_line_title>
+          </po_line_info>
+          <fund_info_list>
+            <fund_info>
+              <amount>
+                <currency>USD</currency>
+                <sum>32.71</sum>
+              </amount>
+              <local_amount>
+                <currency>USD</currency>
+                <sum>32.71</sum>
+              </local_amount>
+              <code>rnlds</code>
+              <name>Flora Elizabeth Reynolds Book Fund</name>
+              <fiscal_period>FY-2026</fiscal_period>
+              <external_id>GF1682-SC090</external_id>
+              <type>ALLOCATED</type>
+              <fund_type>General</fund_type>
+              <fund_type_desc>General</fund_type_desc>
+              <ledger_code>OLIN RESTRICTED</ledger_code>
+              <ledger_name>F.W. OLIN LIBRARY RESTRICTED ACCOUNT</ledger_name>
+            </fund_info>
+          </fund_info_list>
+        </invoice_line>
+        <invoice_line>
+          <line_number>3</line_number>
+          <line_type>REGULAR</line_type>
+          <note>Unit price : 28.0   
+ Unit price : 23.8</note>
+          <quantity>1</quantity>
+          <reporting_code>Fiction</reporting_code>
+          <total_price>28.62</total_price>
+          <price>23.8</price>
+          <po_line_info>
+            <fully_Invoiced_ind>true</fully_Invoiced_ind>
+            <po_line_owner>F.W. Olin Library</po_line_owner>
+            <mms_record_id>9952616338301401</mms_record_id>
+            <meta_data_values>
+              <acqterms_identifier>9780316584517</acqterms_identifier>
+              <acqterms_identifierType>ISBN</acqterms_identifierType>
+              <creator>ADRIAN, EMILY</creator>
+              <date>2025</date>
+              <publisher>LITTLE, BROWN</publisher>
+            </meta_data_values>
+            <po_number>PO-3374739</po_number>
+            <vendor_reference_number>90102125287</vendor_reference_number>
+            <po_line_number>POL-151136</po_line_number>
+            <po_line_price>28.0</po_line_price>
+            <po_line_title>SEDUCTION THEORY.</po_line_title>
+          </po_line_info>
+          <fund_info_list>
+            <fund_info>
+              <amount>
+                <currency>USD</currency>
+                <sum>28.62</sum>
+              </amount>
+              <local_amount>
+                <currency>USD</currency>
+                <sum>28.62</sum>
+              </local_amount>
+              <code>rnlds</code>
+              <name>Flora Elizabeth Reynolds Book Fund</name>
+              <fiscal_period>FY-2026</fiscal_period>
+              <external_id>GF1682-SC090</external_id>
+              <type>ALLOCATED</type>
+              <fund_type>General</fund_type>
+              <fund_type_desc>General</fund_type_desc>
+              <ledger_code>OLIN RESTRICTED</ledger_code>
+              <ledger_name>F.W. OLIN LIBRARY RESTRICTED ACCOUNT</ledger_name>
+            </fund_info>
+          </fund_info_list>
+        </invoice_line>
+      </invoice_line_list>
+    </invoice>
+  </invoice_list>
+</payment_data>' sandbox></iframe>
+        </body>
+</html>
