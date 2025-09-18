@@ -5,6 +5,7 @@ from pymarc import exceptions as exc
 import sys
 import json
 import re
+import os
 from datetime import datetime
 
 def clean_isbn(isbn_field):
@@ -152,6 +153,12 @@ def main():
     if len(sys.argv) != 2:
         print("Usage: python script.py <marc_filename>")
         sys.exit(1)
+    else:
+        csv_path = sys.argv[1]
+        
+    if not os.path.exists(csv_path):
+        print(f"File not found: {csv_path}", style="bold red")
+        sys.exit(1)
     
     filename = sys.argv[1]
     
@@ -189,10 +196,13 @@ def main():
                         
                         # Create output filename based on control number or sequence
                         control_num = marc_data.get('control_number', f'record_{i:04d}')
+                        
+                        csv_dir = os.path.dirname(os.path.abspath(csv_path))
                         output_filename = f"{control_num}.json"
+                        filepath = os.path.join(csv_dir, output_filename)
                         
                         # Write JSON file
-                        with open(output_filename, 'w', encoding='utf-8') as json_file:
+                        with open(filepath, 'w', encoding='utf-8') as json_file:
                             json.dump(po_line_json, json_file, indent=4, ensure_ascii=False)
                         
                         print(f"✓ Created: {output_filename}")

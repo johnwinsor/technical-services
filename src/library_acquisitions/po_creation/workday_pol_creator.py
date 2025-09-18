@@ -230,7 +230,7 @@ def create_po_line_json(data: POLineData) -> Dict[str, Any]:
             "fund_code": {"value": "rnlds", "desc": "Flora Elizabeth Reynolds Book Fund"}
         }],
         "reporting_code": data.subject,
-        "vendor_note": f"Amazon Order ID: {data.order_id}",
+        # "vendor_note": f"Amazon Order ID: {data.order_id}",
         "receiving_note": " | ".join(data.receiving_note_categories) if data.receiving_note_categories and "None" not in data.receiving_note_categories else "None",
         "location": [{
             "quantity": str(data.quantity),

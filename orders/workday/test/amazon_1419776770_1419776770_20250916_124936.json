@@ -23,12 +23,12 @@
     "rush": "false",
     "cancellation_restriction": "false",
     "price": {
-        "sum": "71.84",
+        "sum": "23.17",
         "currency": {
             "value": "USD"
         }
     },
-    "vendor_reference_number": "0262521997",
+    "vendor_reference_number": "1419776770",
     "vendor_reference_number_type": {
         "value": "IA"
     },
@@ -36,15 +36,15 @@
         "value": "API"
     },
     "resource_metadata": {
-        "title": "The principle of hope",
-        "author": "Ernst Bloch",
-        "isbn": "0262521997",
-        "vendor_title_number": "0262521997"
+        "title": "The road : a graphic novel adaptation",
+        "author": "Manu Larcenet",
+        "isbn": "9781419776779",
+        "vendor_title_number": "1419776770"
     },
     "fund_distribution": [
         {
             "amount": {
-                "sum": "71.84",
+                "sum": "23.17",
                 "currency": {
                     "value": "USD",
                     "desc": "US Dollar"
@@ -56,9 +56,8 @@
             }
         }
     ],
-    "reporting_code": "Sociology",
-    "vendor_note": "Amazon Order ID: 0262521997",
-    "receiving_note": "Interested User",
+    "reporting_code": "Graphic Novels",
+    "receiving_note": "None",
     "location": [
         {
             "quantity": "1",
@@ -80,19 +79,10 @@
             ]
         }
     ],
-    "expected_receipt_date": "2025-09-17Z",
-    "interested_user": [
-        {
-            "primary_id": "002440147",
-            "notify_receiving_activation": "true",
-            "hold_item": "true",
-            "notify_renewal": "false",
-            "notify_cancel": "false"
-        }
-    ],
+    "expected_receipt_date": "2025-09-23Z",
     "note": [
         {
-            "note_text": "ASIN: 0262521997"
+            "note_text": "ASIN: 1419776770"
         },
         {
             "note_text": "Account Group: 100000090 - Books"

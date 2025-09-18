@@ -32,5 +32,5 @@ workday-csv-to-json = "library_acquisitions.po_creation.workday_pol_creator:main
 alma-check-holdings = "collection_management.alma_holdings_checker:main"
 edi-parser = "library_acquisitions.invoice_processing.edi_parser:main"
 invoice-report = "library_acquisitions.invoice_processing.invoice_report:main"
-jlg-json = "library_acquisitions.jlg_json_to_marc:main"
+jlg-json = "library_acquisitions.jlg_marc_to_json:main"
 alma-create-pol = "library_acquisitions.po_creation.alma_api_create_po_lines:main"
