@@ -223,7 +223,8 @@ def create_po_line_json(data: POLineData) -> Dict[str, Any]:
             "title": data.title,
             "author": data.author,
             "isbn": data.isbn,
-            "vendor_title_number": data.asin
+            "vendor_title_number": data.asin,
+            "system_control_number": data.oclc_number if hasattr(data, 'oclc_number') else "",
         },
         "fund_distribution": [{
             "amount": {"sum": price_str, "currency": {"value": "USD", "desc": "US Dollar"}},
@@ -315,6 +316,7 @@ def get_user_metadata(data: POLineData, alma_config: Optional[AlmaConfig]) -> PO
                 
                 if oclc_data:
                     console.print("Found bibliographic data from OCLC!", style="green")
+                    data.oclc_number = [used_oclc_number] # Store OCLC number as array in data
                 else:
                     console.print("No data found for that OCLC number", style="yellow")
     
