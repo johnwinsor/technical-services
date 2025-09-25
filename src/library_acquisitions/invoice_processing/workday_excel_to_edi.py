@@ -79,22 +79,21 @@ class EDIFACTInvoiceGenerator:
         # Calculate charges
         line_items = invoice_data.get('line_items', [])
         shipping_total = sum(item.get('shipping', 0) for item in line_items)
+        total_tax = invoice_data.get('total_tax', 0)
         
         # ALC - Allowance or Charge (Freight) - only if there's shipping cost
         if shipping_total > 0:
             segments.append("ALC+C++++DL::28:Freight Charges'")
             segments.append(f"MOA+8:{shipping_total:.2f}'")
         
+        # ALC - Allowance or Charge (Tax) - if there's tax
+        if total_tax > 0:
+            segments.append("ALC+C++++TX::28:Sales Tax'")
+            segments.append(f"MOA+8:{total_tax:.2f}'")
+        
         # Line items
         for i, item in enumerate(line_items, 1):
             segments.extend(self.generate_line_item_segments(item, i))
-        
-        # Add tax information after line items if we have total tax
-        total_tax = invoice_data.get('total_tax', 0)
-        if total_tax > 0:
-            # TAX segment for invoice-level tax
-            segments.append(f"TAX+7+VAT+++:::'")
-            segments.append(f"MOA+124:{total_tax:.2f}'")
         
         # UNS - Section Control
         segments.append("UNS+S'")
@@ -116,9 +115,7 @@ class EDIFACTInvoiceGenerator:
         segments.append(f"MOA+9:{gross_total:.2f}'")
         segments.append(f"MOA+79:{net_total:.2f}'")
         
-        # Add total tax amount if there's any tax
-        if total_tax > 0:
-            segments.append(f"MOA+176:{total_tax:.2f}'")
+        # Note: Tax is now handled as ALC charge above, not as separate MOA+176
         
         # UNT - Message Trailer
         segment_count = len(segments) + 1  # +1 for the UNT segment itself
