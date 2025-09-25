@@ -1,0 +1,10 @@
+﻿Goods Order Line,Line,Item,Item Description,Commodity Code,Spend Category,Supplier Item Identifier,Business Document Status,Tax,Tax Recoverability,Tax Option,Quantity,Unit of Measure,Unit Cost,Extended Amount,Due Date,Lead Time,Retention,Down Payment,Prepaid,Deliver-To,Ship-To Address,Ship-To Contact,Requester,Item Identifiers,Cart Details,Memo,Business Document Lines,Grant,Project Phase,Designation,Gift,*Cost Center,*Additional Worktags,Splits
+PO00004139 - Line 1,1,,The Lunchbox [Blu-ray + DVD],100000087 - Films,SC087 Films,B00J5LXQKQ,"Fully Invoiced
+
+Fully Received",US Sales Tax,,,"1
+
+1
+
+1",Each,19.98,19.98,,,,,,"Oakland > OAK-Olin Library > Olin Library, First Floor > Olin Library, Room 147","5000 MacArthur Boulevard
+Oakland, CA 94613
+United States of America",John Winsor,John Winsor,,"CartName : 754930131,CommodityCode : 100000087,ExternalSupplierID : Z00288862,ItemType : Good,Packaging : EA,ProductType : Punchout,RequisitionID : 205223334,RequisitionLineID : 754930131,SupplierID : 126526,SystemInfo : Req205223334-754930131,UniqueName : 002635678",,"RCT00002080 for PO00004139 - Line 1 - Draft,RCT00002209 for PO00004139 - Line 1 - Adjustment In Progress,RQ00004623,Supplier Invoice: INV00009180  - 19.98 - Approved",,,,,CC135 Oakland Library,"Function: Libraries,Fund: 11 UR Current,Region: Oakland",0

@@ -1,0 +1,28 @@
+﻿Goods Order Line,Line,Item,Item Description,Commodity Code,Spend Category,Supplier Item Identifier,Business Document Status,Tax,Tax Recoverability,Tax Option,Quantity,Unit of Measure,Unit Cost,Extended Amount,Due Date,Lead Time,Retention,Down Payment,Prepaid,Deliver-To,Ship-To Address,Ship-To Contact,Requester,Item Identifiers,Cart Details,Memo,Business Document Lines,Grant,Project Phase,Designation,Gift,*Cost Center,*Additional Worktags,Splits
+PO00006592 - Line 1,1,,"The Principle of Hope, Vol. 1 (Studies in Contemporary German Social Thought)",100000090 - Books,SC090 Books,0262521997,"Fully Invoiced
+
+Fully Received",US Sales Tax,,,"1
+
+1
+
+1",Each,71.84,71.84,,,,,,"Oakland > OAK-Olin Library > Olin Library, First Floor > Olin Library, Room 148","5000 MacArthur Boulevard
+Oakland, CA 94613
+United States of America",Eleanor Davis,Eleanor Davis,,"CartName : 757769347,CommodityCode : 100000090,ExternalSupplierID : Z00288862,ItemType : Good,Packaging : EA,ProductType : Punchout,RequisitionID : 205991759,RequisitionLineID : 757769347,SupplierID : 126526,SystemInfo : Req205991759-757769347,UniqueName : 002333989",Interested user Alec Stubbs -- ordered under  operational budget,"RCT00003522 for PO00006592 - Line 1 - Approved,RQ00007051,Supplier Invoice: INV00013750  - 71.84 - Approved",,,,,CC135 Oakland Library,"Function: Libraries,Fund: 11 UR Current,Region: Oakland",0
+PO00006592 - Line 2,2,,"The Principle of Hope, Vol. 2 (Studies in Contemporary German Social Thought)",100000090 - Books,SC090 Books,0262522004,"Fully Invoiced
+
+Fully Received",US Sales Tax,,,"1
+
+1
+
+1",Each,60,60,,,,,,"Oakland > OAK-Olin Library > Olin Library, First Floor > Olin Library, Room 148","5000 MacArthur Boulevard
+Oakland, CA 94613
+United States of America",Eleanor Davis,Eleanor Davis,,"CartName : 757769348,CommodityCode : 100000090,ExternalSupplierID : Z00288862,ItemType : Good,Packaging : EA,ProductType : Punchout,RequisitionID : 205991759,RequisitionLineID : 757769348,SupplierID : 126526,SystemInfo : Req205991759-757769348,UniqueName : 002333989",,"RCT00003522 for PO00006592 - Line 2 - Approved,RQ00007051,Supplier Invoice: INV00013750  - 60 - Approved",,,,,CC135 Oakland Library,"Function: Libraries,Fund: 11 UR Current,Region: Oakland",0
+PO00006592 - Line 3,3,,"The Principle of Hope, Vol. 3 (Studies in Contemporary German Social Thought)",100000090 - Books,SC090 Books,0262522012,"Fully Invoiced
+
+Fully Received",US Sales Tax,,,"1
+
+1
+
+1",Each,53.23,53.23,,,,,,"Oakland > OAK-Olin Library > Olin Library, First Floor > Olin Library, Room 148","5000 MacArthur Boulevard
+Oakland, CA 94613
+United States of America",Eleanor Davis,Eleanor Davis,,"CartName : 757769349,CommodityCode : 100000090,ExternalSupplierID : Z00288862,ItemType : Good,Packaging : EA,ProductType : Punchout,RequisitionID : 205991759,RequisitionLineID : 757769349,SupplierID : 126526,SystemInfo : Req205991759-757769349,UniqueName : 002333989",,"RCT00003522 for PO00006592 - Line 3 - Approved,RQ00007051,Supplier Invoice: INV00013750  - 53.23 - Approved",,,,,CC135 Oakland Library,"Function: Libraries,Fund: 11 UR Current,Region: Oakland",0

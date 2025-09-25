@@ -23,12 +23,12 @@
     "rush": "false",
     "cancellation_restriction": "false",
     "price": {
-        "sum": "66.15",
+        "sum": "22.32",
         "currency": {
             "value": "USD"
         }
     },
-    "vendor_reference_number": "112-2044402-4745014",
+    "vendor_reference_number": "1593277423",
     "vendor_reference_number_type": {
         "value": "IA"
     },
@@ -36,29 +36,31 @@
         "value": "API"
     },
     "resource_metadata": {
-        "title": "The Principle of Hope, Vol. 2 (Studies in Contemporary German Social Thought)",
-        "author": "MIT Press",
-        "isbn": "0262522004",
-        "vendor_title_number": "0262522004"
+        "title": "The manga guide to cryptography",
+        "author": "1593277423",
+        "isbn": "1593277423",
+        "vendor_title_number": "1593277423",
+        "system_control_number": [
+            "1031429231"
+        ]
     },
     "fund_distribution": [
         {
             "amount": {
-                "sum": "66.15",
+                "sum": "22.32",
                 "currency": {
                     "value": "USD",
                     "desc": "US Dollar"
                 }
             },
             "fund_code": {
-                "value": "rnlds",
-                "desc": "Flora Elizabeth Reynolds Book Fund"
+                "value": "stee",
+                "desc": "Steel-Little Fund"
             }
         }
     ],
-    "reporting_code": "Sociology",
-    "vendor_note": "Amazon Order ID: 112-2044402-4745014",
-    "receiving_note": "Interested User",
+    "reporting_code": "Graphic Novels",
+    "receiving_note": "None",
     "location": [
         {
             "quantity": "1",
@@ -80,24 +82,13 @@
             ]
         }
     ],
-    "interested_user": [
-        {
-            "primary_id": "002440147",
-            "notify_receiving_activation": "true",
-            "hold_item": "false",
-            "notify_renewal": "false",
-            "notify_cancel": "false"
-        }
-    ],
+    "expected_receipt_date": "2025-10-02Z",
     "note": [
         {
-            "note_text": "Amazon PO Number: PO00006592"
+            "note_text": "ASIN: 1593277423"
         },
         {
-            "note_text": "ASIN: 0262522004"
-        },
-        {
-            "note_text": "Account Group: Jaggaer Punchout Group Prod"
+            "note_text": "Account Group: 100000090 - Books"
         }
     ]
 }

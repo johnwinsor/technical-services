@@ -1,5 +1,4 @@
 {
-    "link": "",
     "owner": {
         "value": "OLIN",
         "desc": "F.W. Olin Library"
@@ -17,20 +16,19 @@
         "desc": "Purchase at Vendor System"
     },
     "material_type": {
-        "value": "DVD"
+        "value": "BOOK"
     },
     "additional_order_reference": "punchout purchase",
     "no_charge": "false",
     "rush": "false",
     "cancellation_restriction": "false",
-    "cancellation_restriction_note": "",
     "price": {
-        "sum": "22.03",
+        "sum": "71.84",
         "currency": {
             "value": "USD"
         }
     },
-    "vendor_reference_number": "114-4304266-0411400",
+    "vendor_reference_number": "0262521997",
     "vendor_reference_number_type": {
         "value": "IA"
     },
@@ -38,15 +36,18 @@
         "value": "API"
     },
     "resource_metadata": {
-        "title": "The Lunchbox [Blu-ray + DVD]",
-        "author": "Sony Pictures",
-        "isbn": "",
-        "vendor_title_number": "B00J5LXQKQ"
+        "title": "The principle of hope",
+        "author": "Ernst Bloch",
+        "isbn": "0262521997",
+        "vendor_title_number": "0262521997",
+        "system_control_number": [
+            "32851833"
+        ]
     },
     "fund_distribution": [
         {
             "amount": {
-                "sum": "22.03",
+                "sum": "71.84",
                 "currency": {
                     "value": "USD",
                     "desc": "US Dollar"
@@ -58,20 +59,8 @@
             }
         }
     ],
-    "reporting_code": "Art",
-    "vendor_note": "Amazon Order ID: 114-4304266-0411400",
-    "receiving_note": "",
-    "note": [
-        {
-            "note_text": "Amazon PO Number: PO00004139"
-        },
-        {
-            "note_text": "ASIN: B00J5LXQKQ"
-        },
-        {
-            "note_text": "Account Group: Jaggaer Punchout Group Prod"
-        }
-    ],
+    "reporting_code": "Sociology",
+    "receiving_note": "None",
     "location": [
         {
             "quantity": "1",
@@ -93,13 +82,13 @@
             ]
         }
     ],
-    "interested_user": [
+    "expected_receipt_date": "2025-10-02Z",
+    "note": [
         {
-            "primary_id": "222222222",
-            "notify_receiving_activation": "false",
-            "hold_item": "false",
-            "notify_renewal": "false",
-            "notify_cancel": "false"
+            "note_text": "ASIN: 0262521997"
+        },
+        {
+            "note_text": "Account Group: 100000090 - Books"
         }
     ]
 }

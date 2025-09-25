@@ -23,12 +23,12 @@
     "rush": "false",
     "cancellation_restriction": "false",
     "price": {
-        "sum": "79.20",
+        "sum": "19.98",
         "currency": {
             "value": "USD"
         }
     },
-    "vendor_reference_number": "112-2044402-4745014",
+    "vendor_reference_number": "B00J5LXQKQ",
     "vendor_reference_number_type": {
         "value": "IA"
     },
@@ -36,15 +36,18 @@
         "value": "API"
     },
     "resource_metadata": {
-        "title": "The Principle of Hope, Vol. 1 (Studies in Contemporary German Social Thought)",
-        "author": "MIT Press",
-        "isbn": "0262521997",
-        "vendor_title_number": "0262521997"
+        "title": "The lunchbox",
+        "author": "Ritesh Batra",
+        "isbn": "",
+        "vendor_title_number": "B00J5LXQKQ",
+        "system_control_number": [
+            "881433575"
+        ]
     },
     "fund_distribution": [
         {
             "amount": {
-                "sum": "79.20",
+                "sum": "19.98",
                 "currency": {
                     "value": "USD",
                     "desc": "US Dollar"
@@ -56,9 +59,8 @@
             }
         }
     ],
-    "reporting_code": "Sociology",
-    "vendor_note": "Amazon Order ID: 112-2044402-4745014",
-    "receiving_note": "Interested User",
+    "reporting_code": "Fiction",
+    "receiving_note": "None",
     "location": [
         {
             "quantity": "1",
@@ -80,24 +82,13 @@
             ]
         }
     ],
-    "interested_user": [
-        {
-            "primary_id": "002440147",
-            "notify_receiving_activation": "true",
-            "hold_item": "false",
-            "notify_renewal": "false",
-            "notify_cancel": "false"
-        }
-    ],
+    "expected_receipt_date": "2025-10-02Z",
     "note": [
         {
-            "note_text": "Amazon PO Number: PO00006592"
+            "note_text": "ASIN: B00J5LXQKQ"
         },
         {
-            "note_text": "ASIN: 0262521997"
-        },
-        {
-            "note_text": "Account Group: Jaggaer Punchout Group Prod"
+            "note_text": "Account Group: 100000087 - Films"
         }
     ]
 }

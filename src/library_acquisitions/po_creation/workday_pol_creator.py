@@ -63,12 +63,14 @@ class POLineData:
     brand: str = ""
     manufacturer: str = ""
     account_group: str = ""
+    gift_fund: str = ""  # Gift column from CSV
     po_number: str = ""
     order_date: str = ""
     csv_receiving_note: str = ""
     
     # User-added metadata
     subject: str = ""
+    fund_code: str = "rnlds"  # Default to Reynolds fund
     receiving_note_categories: List[str] = None
     additional_note: str = ""
     reserve_note: str = ""
@@ -93,6 +95,32 @@ SUBJECTS = [
 ]
 
 RECEIVING_CATEGORIES = ['None', 'Note', 'Interested User', 'Reserve', 'Display', 'Replacement']
+
+FUNDS = [
+    {"code": "bend", "desc": "Bender Special Collections Fund", "workday_ids": []},
+    {"code": "bret", "desc": "Brett Drama Fund", "workday_ids": []},
+    {"code": "cald", "desc": "Caldwell Art History Fund", "workday_ids": []},
+    {"code": "cl26", "desc": "Class of 1926 Fund", "workday_ids": []},
+    {"code": "cl44", "desc": "Class of 1944 Periodical Enhancement", "workday_ids": []},
+    {"code": "einh", "desc": "Einhaus Humanities & Social Sciences Fund", "workday_ids": []},
+    {"code": "rnlds", "desc": "Flora Elizabeth Reynolds Book Fund", "workday_ids": []},
+    {"code": "frie", "desc": "Friedman Fund", "workday_ids": []},
+    {"code": "purvi", "desc": "Helen Purvine Burnett Fund", "workday_ids": []},
+    {"code": "hell", "desc": "Heller Humanities Fund", "workday_ids": []},
+    {"code": "helm", "desc": "Helmholz", "workday_ids": []},
+    {"code": "irw", "desc": "Irwin Chemistry Fund", "workday_ids": []},
+    {"code": "kent", "desc": "Kent Fund", "workday_ids": []},
+    {"code": "lib", "desc": "Library Interdisciplinary", "workday_ids": []},
+    {"code": "lit", "desc": "Library Literature Fund", "workday_ids": []},
+    {"code": "mus", "desc": "Music Fund", "workday_ids": []},
+    {"code": "obr", "desc": "O'Brien Law & International Relations Fund", "workday_ids": []},
+    {"code": "para", "desc": "Parachini", "workday_ids": []},
+    {"code": "part", "desc": "Parton Dance Fund", "workday_ids": []},
+    {"code": "phil", "desc": "Phillips Books & Art Fund", "workday_ids": []},
+    {"code": "amer", "desc": "Rosalie Cuneo Amer Fund", "workday_ids": []},
+    {"code": "stee", "desc": "Steel-Little Fund", "workday_ids": ["GF1684"]},
+    {"code": "vall", "desc": "Valley Education Fund", "workday_ids": []}
+]
 
 # Utility Functions
 def clean_asin(asin) -> str:
@@ -184,11 +212,10 @@ def parse_csv_row(row: Dict[str, Any]) -> Optional[POLineData]:
         asin=asin,
         price=float(format_currency_amount(row.get('Extended Amount', 0))),
         quantity=int(row.get('Quantity', 1)) if row.get('Item Quantity') else 1,
-        # brand=str(row.get('Brand', '')).strip(),
         manufacturer=str(row.get('Supplier Item Identifier', '')).strip(),
         account_group=str(row.get('Commodity Code', '')).strip(),
+        gift_fund=str(row.get('Gift', '')).strip(),  # Capture Gift column
         po_number=str(row.get('Goods Order Line', '')).strip(),
-        # order_date=str(row.get('Order Date', '')).strip(),
         csv_receiving_note=str(row.get('Memo', '')).strip()
     )
 
@@ -203,6 +230,9 @@ def create_po_line_json(data: POLineData) -> Dict[str, Any]:
     
     # Use brand or manufacturer as author
     author = data.brand if data.brand else data.manufacturer
+    
+    # Find fund description for the selected fund code
+    fund_desc = next((fund["desc"] for fund in FUNDS if fund["code"] == data.fund_code), "Unknown Fund")
     
     po_line = {
         "owner": {"value": "OLIN", "desc": "F.W. Olin Library"},
@@ -221,17 +251,16 @@ def create_po_line_json(data: POLineData) -> Dict[str, Any]:
         "source_type": {"value": "API"},
         "resource_metadata": {
             "title": data.title,
-            "author": data.author,
-            "isbn": data.isbn,
+            "author": author,
+            "isbn": extract_isbn_from_asin(data.asin),
             "vendor_title_number": data.asin,
             "system_control_number": data.oclc_number if hasattr(data, 'oclc_number') else "",
         },
         "fund_distribution": [{
             "amount": {"sum": price_str, "currency": {"value": "USD", "desc": "US Dollar"}},
-            "fund_code": {"value": "rnlds", "desc": "Flora Elizabeth Reynolds Book Fund"}
+            "fund_code": {"value": data.fund_code, "desc": fund_desc}
         }],
         "reporting_code": data.subject,
-        # "vendor_note": f"Amazon Order ID: {data.order_id}",
         "receiving_note": " | ".join(data.receiving_note_categories) if data.receiving_note_categories and "None" not in data.receiving_note_categories else "None",
         "location": [{
             "quantity": str(data.quantity),
@@ -288,6 +317,7 @@ def display_item_info(data: POLineData):
     table.add_row("Title", data.title[:60] + "..." if len(data.title) > 60 else data.title)
     table.add_row("Order ID", data.order_id)
     table.add_row("CSV Receiving Note", data.csv_receiving_note or "None")
+    table.add_row("Gift Fund", data.gift_fund or "None")
     table.add_row("Price", f"${data.price:.2f}")
     table.add_row("Quantity", str(data.quantity))
     
@@ -323,7 +353,7 @@ def get_user_metadata(data: POLineData, alma_config: Optional[AlmaConfig]) -> PO
     # Bibliographic information
     data.title = questionary.text(
         "Title:",
-        default=oclc_data.get('title', ''),
+        default=oclc_data.get('title', data.title),
         validate=lambda text: len(text.strip()) > 0 or "Title is required"
     ).ask()
     
@@ -354,6 +384,35 @@ def get_user_metadata(data: POLineData, alma_config: Optional[AlmaConfig]) -> PO
         default="",
         validate=lambda text: text in SUBJECTS or "Please select a valid subject"
     ).ask()
+    
+    # Fund selection
+    fund_choices = [f"{fund['code']} - {fund['desc']}" for fund in FUNDS]
+    
+    # Debug: show what we found in the CSV
+    console.print(f"CSV Gift field contains: '{data.gift_fund}'", style="cyan")
+    
+    # Check if CSV gift contains any workday IDs we recognize
+    default_fund = "rnlds - Flora Elizabeth Reynolds Book Fund"  # Default
+    if data.gift_fund:
+        console.print("Checking for matching Workday IDs...", style="yellow")
+        for fund in FUNDS:
+            for workday_id in fund['workday_ids']:
+                if workday_id and workday_id in data.gift_fund:
+                    default_fund = f"{fund['code']} - {fund['desc']}"
+                    console.print(f"Found match! {workday_id} -> {fund['desc']}", style="green")
+                    break
+            if default_fund != "rnlds - Flora Elizabeth Reynolds Book Fund":
+                break
+    
+    console.print(f"Using default fund: {default_fund}", style="cyan")
+    
+    selected_fund = questionary.select(
+        "Select fund:",
+        choices=fund_choices,
+        default=default_fund
+    ).ask()
+    
+    data.fund_code = selected_fund.split(" - ")[0]
     
     # Receiving note categories
     data.receiving_note_categories = questionary.checkbox(
@@ -413,6 +472,11 @@ def display_summary(data: POLineData, filename: str):
     
     table.add_row("Title", data.title[:50] + "..." if len(data.title) > 50 else data.title)
     table.add_row("Subject", data.subject)
+    
+    # Add fund display
+    fund_desc = next((fund["desc"] for fund in FUNDS if fund["code"] == data.fund_code), "Unknown")
+    table.add_row("Fund", f"{data.fund_code} - {fund_desc}")
+    
     table.add_row("Receiving Note", " | ".join(data.receiving_note_categories))
     
     if data.interested_user_id:
@@ -426,7 +490,9 @@ def save_po_line(data: POLineData, csv_path: str) -> str:
     """Save the PO line JSON to a file in the same directory as the CSV"""
     csv_dir = os.path.dirname(os.path.abspath(csv_path))
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    filename = f"amazon_{data.asin}_{data.order_id.replace(' ', '_')}_{timestamp}.json"
+    # Use Goods Order Line (po_number) and remove spaces
+    clean_po_number = data.po_number.replace(' ', '') if data.po_number else 'unknown'
+    filename = f"{clean_po_number}_{timestamp}.json"
     filepath = os.path.join(csv_dir, filename)
     
     po_json = create_po_line_json(data)
@@ -495,9 +561,9 @@ def process_csv_file(csv_path: str):
             po_data = get_user_metadata(po_data, alma_config)
             
             # Generate filename and show summary
-            csv_dir = os.path.dirname(os.path.abspath(csv_path))
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-            filename = f"amazon_{po_data.asin}_{po_data.order_id.replace(' ', '_')}_{timestamp}.json"
+            clean_po_number = po_data.po_number.replace(' ', '') if po_data.po_number else 'unknown'
+            filename = f"{clean_po_number}_{timestamp}.json"
             
             display_summary(po_data, filename)
             
@@ -514,7 +580,7 @@ def process_csv_file(csv_path: str):
             if action == "save":
                 saved_filename = save_po_line(po_data, csv_path)
                 console.print(f"Saved: {saved_filename}", style="green")
-                console.print(f"Location: {csv_dir}", style="dim")
+                console.print(f"Location: {os.path.dirname(os.path.abspath(csv_path))}", style="dim")
                 processed += 1
             elif action == "skip":
                 console.print("Skipped", style="yellow")
@@ -545,7 +611,7 @@ def process_csv_file(csv_path: str):
 def main():
     """Main entry point"""
     if len(sys.argv) != 2:
-        console.print("Usage: python amazon_pol_creator.py <csv_filename>", style="bold red")
+        console.print("Usage: python workday_pol_creator.py <csv_filename>", style="bold red")
         
         if questionary.confirm("Enter filename interactively?").ask():
             csv_path = questionary.path(
