@@ -23,12 +23,12 @@
     "rush": "false",
     "cancellation_restriction": "false",
     "price": {
-        "sum": "28.42",
+        "sum": "8.99",
         "currency": {
             "value": "USD"
         }
     },
-    "vendor_reference_number": "113-6107919-8746650",
+    "vendor_reference_number": "0593236467",
     "vendor_reference_number_type": {
         "value": "IA"
     },
@@ -36,15 +36,18 @@
         "value": "API"
     },
     "resource_metadata": {
-        "title": "Public Enemy #2: An All-new Boondocks Collection",
-        "author": "Three Rivers Press",
-        "isbn": "1400082587",
-        "vendor_title_number": "1400082587"
+        "title": "Papercuts : a party game for the rude and well-read",
+        "author": "0593236467",
+        "isbn": "0593236467",
+        "vendor_title_number": "0593236467",
+        "system_control_number": [
+            "1415983969"
+        ]
     },
     "fund_distribution": [
         {
             "amount": {
-                "sum": "28.42",
+                "sum": "8.99",
                 "currency": {
                     "value": "USD",
                     "desc": "US Dollar"
@@ -56,9 +59,8 @@
             }
         }
     ],
-    "reporting_code": "Graphic Novels",
-    "vendor_note": "Amazon Order ID: 113-6107919-8746650",
-    "receiving_note": "Replacement",
+    "reporting_code": "Game Design",
+    "receiving_note": "Interested User",
     "location": [
         {
             "quantity": "1",
@@ -80,12 +82,25 @@
             ]
         }
     ],
+    "expected_receipt_date": "2025-10-02Z",
+    "interested_user": [
+        {
+            "primary_id": "002339619",
+            "notify_receiving_activation": "true",
+            "hold_item": "false",
+            "notify_renewal": "false",
+            "notify_cancel": "false"
+        }
+    ],
     "note": [
         {
-            "note_text": "ASIN: 1400082587"
+            "note_text": "Amazon PO Number: PO00008131 - Line 1"
         },
         {
-            "note_text": "Account Group: Jaggaer Punchout Group Prod"
+            "note_text": "ASIN: 0593236467"
+        },
+        {
+            "note_text": "Account Group: 100000090 - Books"
         }
     ]
 }

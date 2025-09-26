@@ -103,7 +103,7 @@ FUNDS = [
     {"code": "cl26", "desc": "Class of 1926 Fund", "workday_ids": []},
     {"code": "cl44", "desc": "Class of 1944 Periodical Enhancement", "workday_ids": []},
     {"code": "einh", "desc": "Einhaus Humanities & Social Sciences Fund", "workday_ids": []},
-    {"code": "rnlds", "desc": "Flora Elizabeth Reynolds Book Fund", "workday_ids": []},
+    {"code": "rnlds", "desc": "Flora Elizabeth Reynolds Book Fund", "workday_ids": ["GF1682"]},
     {"code": "frie", "desc": "Friedman Fund", "workday_ids": []},
     {"code": "purvi", "desc": "Helen Purvine Burnett Fund", "workday_ids": []},
     {"code": "hell", "desc": "Heller Humanities Fund", "workday_ids": []},
@@ -315,7 +315,8 @@ def display_item_info(data: POLineData):
     table.add_column("Value", style="white", width=62)
     
     table.add_row("Title", data.title[:60] + "..." if len(data.title) > 60 else data.title)
-    table.add_row("Order ID", data.order_id)
+    table.add_row("ISBN/AISN", data.order_id)
+    table.add_row("PO", data.po_number)
     table.add_row("CSV Receiving Note", data.csv_receiving_note or "None")
     table.add_row("Gift Fund", data.gift_fund or "None")
     table.add_row("Price", f"${data.price:.2f}")
@@ -520,7 +521,7 @@ def process_csv_file(csv_path: str):
     
     # Read CSV
     try:
-        with open(csv_path, 'r', encoding='utf-8') as f:
+        with open(csv_path, 'r', encoding='utf-8-sig') as f:  # utf-8-sig handles BOM
             sample = f.read(1024)
             f.seek(0)
             delimiter = csv.Sniffer().sniff(sample).delimiter

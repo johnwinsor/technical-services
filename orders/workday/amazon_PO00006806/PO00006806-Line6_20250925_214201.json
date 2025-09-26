@@ -23,12 +23,12 @@
     "rush": "false",
     "cancellation_restriction": "false",
     "price": {
-        "sum": "19.00",
+        "sum": "6.16",
         "currency": {
             "value": "USD"
         }
     },
-    "vendor_reference_number": "113-6107919-8746650",
+    "vendor_reference_number": "189403788X",
     "vendor_reference_number_type": {
         "value": "IA"
     },
@@ -36,15 +36,18 @@
         "value": "API"
     },
     "resource_metadata": {
-        "title": "Unholy: How White Christian Nationalists Powered the Trump Presidency, and the Devastating Legacy They Left Behind",
-        "author": "Random House Trade Paperbacks",
-        "isbn": "1984820443",
-        "vendor_title_number": "1984820443"
+        "title": "Islands of decolonial love : stories & songs",
+        "author": "189403788X",
+        "isbn": "189403788X",
+        "vendor_title_number": "189403788X",
+        "system_control_number": [
+            "858716761"
+        ]
     },
     "fund_distribution": [
         {
             "amount": {
-                "sum": "19.00",
+                "sum": "6.16",
                 "currency": {
                     "value": "USD",
                     "desc": "US Dollar"
@@ -56,9 +59,8 @@
             }
         }
     ],
-    "reporting_code": "Political Science",
-    "vendor_note": "Amazon Order ID: 113-6107919-8746650",
-    "receiving_note": "Interested User",
+    "reporting_code": "Poetry",
+    "receiving_note": "None",
     "location": [
         {
             "quantity": "1",
@@ -80,21 +82,16 @@
             ]
         }
     ],
-    "interested_user": [
-        {
-            "primary_id": "002630154",
-            "notify_receiving_activation": "true",
-            "hold_item": "true",
-            "notify_renewal": "false",
-            "notify_cancel": "false"
-        }
-    ],
+    "expected_receipt_date": "2025-10-02Z",
     "note": [
         {
-            "note_text": "ASIN: 1984820443"
+            "note_text": "Amazon PO Number: PO00006806 - Line 6"
         },
         {
-            "note_text": "Account Group: Jaggaer Punchout Group Prod"
+            "note_text": "ASIN: 189403788X"
+        },
+        {
+            "note_text": "Account Group: 100000090 - Books"
         }
     ]
 }

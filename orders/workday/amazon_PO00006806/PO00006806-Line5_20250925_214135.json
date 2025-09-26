@@ -28,7 +28,7 @@
             "value": "USD"
         }
     },
-    "vendor_reference_number": "113-6107919-8746650",
+    "vendor_reference_number": "1685892116",
     "vendor_reference_number_type": {
         "value": "IA"
     },
@@ -36,10 +36,13 @@
         "value": "API"
     },
     "resource_metadata": {
-        "title": "Sunburn: Exclusive American Edition with Additional Material",
-        "author": "Melville House",
+        "title": "Sunburn : a novel",
+        "author": "1685892116",
         "isbn": "1685892116",
-        "vendor_title_number": "1685892116"
+        "vendor_title_number": "1685892116",
+        "system_control_number": [
+            "1472918998"
+        ]
     },
     "fund_distribution": [
         {
@@ -57,8 +60,7 @@
         }
     ],
     "reporting_code": "Fiction",
-    "vendor_note": "Amazon Order ID: 113-6107919-8746650",
-    "receiving_note": "Interested User",
+    "receiving_note": "None",
     "location": [
         {
             "quantity": "1",
@@ -80,21 +82,16 @@
             ]
         }
     ],
-    "interested_user": [
-        {
-            "primary_id": "002630575",
-            "notify_receiving_activation": "true",
-            "hold_item": "false",
-            "notify_renewal": "false",
-            "notify_cancel": "false"
-        }
-    ],
+    "expected_receipt_date": "2025-10-02Z",
     "note": [
+        {
+            "note_text": "Amazon PO Number: PO00006806 - Line 5"
+        },
         {
             "note_text": "ASIN: 1685892116"
         },
         {
-            "note_text": "Account Group: Jaggaer Punchout Group Prod"
+            "note_text": "Account Group: 100000090 - Books"
         }
     ]
 }

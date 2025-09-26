@@ -23,12 +23,12 @@
     "rush": "false",
     "cancellation_restriction": "false",
     "price": {
-        "sum": "10.15",
+        "sum": "23.00",
         "currency": {
             "value": "USD"
         }
     },
-    "vendor_reference_number": "113-7786609-6538643",
+    "vendor_reference_number": "0252724216",
     "vendor_reference_number_type": {
         "value": "IA"
     },
@@ -36,15 +36,18 @@
         "value": "API"
     },
     "resource_metadata": {
-        "title": "Islands of Decolonial Love",
-        "author": "Arp Books",
-        "isbn": "189403788X",
-        "vendor_title_number": "189403788X"
+        "title": "Four theories of the press: the authoritarian, libertarian, social responsibility, and Soviet communist concepts of what the press should be and do",
+        "author": "0252724216",
+        "isbn": "0252724216",
+        "vendor_title_number": "0252724216",
+        "system_control_number": [
+            "332763"
+        ]
     },
     "fund_distribution": [
         {
             "amount": {
-                "sum": "10.15",
+                "sum": "23.00",
                 "currency": {
                     "value": "USD",
                     "desc": "US Dollar"
@@ -56,9 +59,8 @@
             }
         }
     ],
-    "reporting_code": "Fiction",
-    "vendor_note": "Amazon Order ID: 113-7786609-6538643",
-    "receiving_note": "Replacement",
+    "reporting_code": "Political Science",
+    "receiving_note": "None",
     "location": [
         {
             "quantity": "1",
@@ -80,12 +82,16 @@
             ]
         }
     ],
+    "expected_receipt_date": "2025-10-02Z",
     "note": [
         {
-            "note_text": "ASIN: 189403788X"
+            "note_text": "Amazon PO Number: PO00006806 - Line 2"
         },
         {
-            "note_text": "Account Group: Jaggaer Punchout Group Prod"
+            "note_text": "ASIN: 0252724216"
+        },
+        {
+            "note_text": "Account Group: 100000090 - Books"
         }
     ]
 }

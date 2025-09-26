@@ -1,0 +1,60 @@
+﻿Goods Order Line,Line,Item,Item Description,Commodity Code,Spend Category,Supplier Item Identifier,Business Document Status,Tax,Tax Recoverability,Tax Option,Quantity,Unit of Measure,Unit Cost,Extended Amount,Due Date,Lead Time,Retention,Down Payment,Prepaid,Deliver-To,Ship-To Address,Ship-To Contact,Requester,Item Identifiers,Cart Details,Memo,Business Document Lines,Grant,Project Phase,Designation,Gift,*Cost Center,*Additional Worktags,Splits
+PO00006806 - Line 1,1,,"Counting: Humans, History and the Infinite Lives of Numbers",100000090 - Books,SC090 Books,0008436509,,US Sales Tax,,,"1
+
+0
+
+0",Each,19.98,19.98,,,,,,"Oakland > OAK-Olin Library > Olin Library, First Floor > Olin Library, Room 148","5000 MacArthur Boulevard
+Oakland, CA 94613
+United States of America",Eleanor Davis,Eleanor Davis,,"CartName : 758047251,CommodityCode : 100000090,ExternalSupplierID : Z00288862,ItemType : Good,Packaging : EA,ProductType : Punchout,RequisitionID : 206066758,RequisitionLineID : 758047251,SupplierID : 126526,SystemInfo : Req206066758-758047251,UniqueName : 002333989",,RQ00007290,,,,,CC135 Oakland Library,"Function: Libraries,Fund: 11 UR Current,Region: Oakland",0
+PO00006806 - Line 2,2,,"Four Theories of the Press: The Authoritarian, Libertarian, Social Responsibility and Soviet Communist Concepts of What the Press Should Be and Do (Illini Books)",100000090 - Books,SC090 Books,0252724216,"Fully Invoiced
+
+Fully Received",US Sales Tax,,,"1
+
+1
+
+1",Each,23,23,,,,,,"Oakland > OAK-Olin Library > Olin Library, First Floor > Olin Library, Room 148","5000 MacArthur Boulevard
+Oakland, CA 94613
+United States of America",Eleanor Davis,Eleanor Davis,,"CartName : 758047252,CommodityCode : 100000090,ExternalSupplierID : Z00288862,ItemType : Good,Packaging : EA,ProductType : Punchout,RequisitionID : 206066758,RequisitionLineID : 758047252,SupplierID : 126526,SystemInfo : Req206066758-758047252,UniqueName : 002333989",,"RCT00004674 for PO00006806 - Line 2 - Approved,RQ00007290,Supplier Invoice: INV00018659  - 23 - Approved",,,,,CC135 Oakland Library,"Function: Libraries,Fund: 11 UR Current,Region: Oakland",0
+PO00006806 - Line 3,3,,Public Enemy #2: An All-new Boondocks Collection,100000090 - Books,SC090 Books,1400082587,,US Sales Tax,,,"1
+
+0
+
+0",Each,28.42,28.42,,,,,,"Oakland > OAK-Olin Library > Olin Library, First Floor > Olin Library, Room 148","5000 MacArthur Boulevard
+Oakland, CA 94613
+United States of America",Eleanor Davis,Eleanor Davis,,"CartName : 758047253,CommodityCode : 100000090,ExternalSupplierID : Z00288862,ItemType : Good,Packaging : EA,ProductType : Punchout,RequisitionID : 206066758,RequisitionLineID : 758047253,SupplierID : 126526,SystemInfo : Req206066758-758047253,UniqueName : 002333989",,RQ00007290,,,,,CC135 Oakland Library,"Function: Libraries,Fund: 11 UR Current,Region: Oakland",0
+PO00006806 - Line 4,4,,The Wild Between Us: A Novel,100000090 - Books,SC090 Books,1662511485,"Fully Invoiced
+
+Fully Received",US Sales Tax,,,"1
+
+1
+
+1",Each,16.99,16.99,,,,,,"Oakland > OAK-Olin Library > Olin Library, First Floor > Olin Library, Room 148","5000 MacArthur Boulevard
+Oakland, CA 94613
+United States of America",Eleanor Davis,Eleanor Davis,,"CartName : 758047254,CommodityCode : 100000090,ExternalSupplierID : Z00288862,ItemType : Good,Packaging : EA,ProductType : Punchout,RequisitionID : 206066758,RequisitionLineID : 758047254,SupplierID : 126526,SystemInfo : Req206066758-758047254,UniqueName : 002333989",,"RCT00003523 for PO00006806 - Line 4 - Approved,RQ00007290,Supplier Invoice: INV00014198  - 16.99 - Approved",,,,,CC135 Oakland Library,"Function: Libraries,Fund: 11 UR Current,Region: Oakland",0
+PO00006806 - Line 5,5,,Sunburn: Exclusive American Edition with Additional Material,100000090 - Books,SC090 Books,1685892116,"Fully Invoiced
+
+Fully Received",US Sales Tax,,,"1
+
+1
+
+1",Each,19.99,19.99,,,,,,"Oakland > OAK-Olin Library > Olin Library, First Floor > Olin Library, Room 148","5000 MacArthur Boulevard
+Oakland, CA 94613
+United States of America",Eleanor Davis,Eleanor Davis,,"CartName : 758047255,CommodityCode : 100000090,ExternalSupplierID : Z00288862,ItemType : Good,Packaging : EA,ProductType : Punchout,RequisitionID : 206066758,RequisitionLineID : 758047255,SupplierID : 126526,SystemInfo : Req206066758-758047255,UniqueName : 002333989",,"RCT00003523 for PO00006806 - Line 5 - Approved,RQ00007290,Supplier Invoice: INV00013740  - 19.99 - Approved",,,,,CC135 Oakland Library,"Function: Libraries,Fund: 11 UR Current,Region: Oakland",0
+PO00006806 - Line 6,6,,Islands of Decolonial Love,100000090 - Books,SC090 Books,189403788X,"Fully Invoiced
+
+Fully Received",US Sales Tax,,,"1
+
+1
+
+1",Each,6.16,6.16,,,,,,"Oakland > OAK-Olin Library > Olin Library, First Floor > Olin Library, Room 148","5000 MacArthur Boulevard
+Oakland, CA 94613
+United States of America",Eleanor Davis,Eleanor Davis,,"CartName : 758047256,CommodityCode : 100000090,ExternalSupplierID : Z00288862,ItemType : Good,Packaging : EA,ProductType : Punchout,RequisitionID : 206066758,RequisitionLineID : 758047256,SupplierID : 126526,SystemInfo : Req206066758-758047256,UniqueName : 002333989",,"RCT00004180 for PO00006806 - Line 6 - Approved,RQ00007290,Supplier Invoice: INV00015770  - 6.16 - Approved",,,,,CC135 Oakland Library,"Function: Libraries,Fund: 11 UR Current,Region: Oakland",0
+PO00006806 - Line 7,7,,"Unholy: How White Christian Nationalists Powered the Trump Presidency, and the Devastating Legacy They Left Behind",100000090 - Books,SC090 Books,1984820443,"Fully Invoiced
+
+Fully Received",US Sales Tax,,,"1
+
+1
+
+1",Each,19,19,,,,,,"Oakland > OAK-Olin Library > Olin Library, First Floor > Olin Library, Room 148","5000 MacArthur Boulevard
+Oakland, CA 94613
+United States of America",Eleanor Davis,Eleanor Davis,,"CartName : 758047460,CommodityCode : 100000090,ExternalSupplierID : Z00288862,ItemType : Good,Packaging : EA,ProductType : Punchout,RequisitionID : 206066758,RequisitionLineID : 758047460,SupplierID : 126526,SystemInfo : Req206066758-758047460,UniqueName : 002333989",,"RCT00003523 for PO00006806 - Line 7 - Approved,RQ00007290,Supplier Invoice: INV00013719  - 19 - Approved",,,,,CC135 Oakland Library,"Function: Libraries,Fund: 11 UR Current,Region: Oakland",0

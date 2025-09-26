@@ -28,7 +28,7 @@
             "value": "USD"
         }
     },
-    "vendor_reference_number": "113-9512379-4202633",
+    "vendor_reference_number": "0008436509",
     "vendor_reference_number_type": {
         "value": "IA"
     },
@@ -36,10 +36,13 @@
         "value": "API"
     },
     "resource_metadata": {
-        "title": "Counting: Humans, History and the Infinite Lives of Numbers",
-        "author": "William Collins",
+        "title": "Counting : humans, history and the infinite lives of numbers",
+        "author": "0008436509",
         "isbn": "0008436509",
-        "vendor_title_number": "0008436509"
+        "vendor_title_number": "0008436509",
+        "system_control_number": [
+            "1452732183"
+        ]
     },
     "fund_distribution": [
         {
@@ -57,8 +60,7 @@
         }
     ],
     "reporting_code": "Mathematics",
-    "vendor_note": "Amazon Order ID: 113-9512379-4202633",
-    "receiving_note": "Note",
+    "receiving_note": "None",
     "location": [
         {
             "quantity": "1",
@@ -80,15 +82,16 @@
             ]
         }
     ],
+    "expected_receipt_date": "2025-10-02Z",
     "note": [
         {
-            "note_text": "Preorder out 12/2/2025 "
+            "note_text": "Amazon PO Number: PO00006806 - Line 1"
         },
         {
             "note_text": "ASIN: 0008436509"
         },
         {
-            "note_text": "Account Group: Jaggaer Punchout Group Prod"
+            "note_text": "Account Group: 100000090 - Books"
         }
     ]
 }

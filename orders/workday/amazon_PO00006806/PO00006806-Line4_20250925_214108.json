@@ -23,12 +23,12 @@
     "rush": "false",
     "cancellation_restriction": "false",
     "price": {
-        "sum": "23.00",
+        "sum": "16.99",
         "currency": {
             "value": "USD"
         }
     },
-    "vendor_reference_number": "113-6107919-8746650",
+    "vendor_reference_number": "1662511485",
     "vendor_reference_number_type": {
         "value": "IA"
     },
@@ -36,15 +36,18 @@
         "value": "API"
     },
     "resource_metadata": {
-        "title": "Four Theories of the Press: The Authoritarian, Libertarian, Social Responsibility and Soviet Communist Concepts of What the Press Should Be and Do (Illini Books)",
-        "author": "University of Illinois Press",
-        "isbn": "0252724216",
-        "vendor_title_number": "0252724216"
+        "title": "The wild between us : a novel",
+        "author": "1662511485",
+        "isbn": "1662511485",
+        "vendor_title_number": "1662511485",
+        "system_control_number": [
+            "1373610235"
+        ]
     },
     "fund_distribution": [
         {
             "amount": {
-                "sum": "23.00",
+                "sum": "16.99",
                 "currency": {
                     "value": "USD",
                     "desc": "US Dollar"
@@ -56,8 +59,7 @@
             }
         }
     ],
-    "reporting_code": "Political Science",
-    "vendor_note": "Amazon Order ID: 113-6107919-8746650",
+    "reporting_code": "Fiction",
     "receiving_note": "None",
     "location": [
         {
@@ -80,12 +82,16 @@
             ]
         }
     ],
+    "expected_receipt_date": "2025-10-02Z",
     "note": [
         {
-            "note_text": "ASIN: 0252724216"
+            "note_text": "Amazon PO Number: PO00006806 - Line 4"
         },
         {
-            "note_text": "Account Group: Jaggaer Punchout Group Prod"
+            "note_text": "ASIN: 1662511485"
+        },
+        {
+            "note_text": "Account Group: 100000090 - Books"
         }
     ]
 }
